@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+*.dmg
+*.blockmap
+*.app/
+.env
+.env.*
+.vscode/
+.idea/
+coverage/
+tmp/
+temp/
+
+/~/
+assets/StreamingMAX_APP/

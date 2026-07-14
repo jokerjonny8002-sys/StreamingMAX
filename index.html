@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>StreamingMAX</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body data-theme="dj-neon">
+  <div class="cockpit-shell">
+
+    <header class="cockpit-header">
+      <div class="window-lights" aria-hidden="true">
+        <span class="light red"></span>
+        <span class="light yellow"></span>
+        <span class="light green"></span>
+      </div>
+
+      <div class="brand-title">
+        Streaming<span>MAX</span>
+      </div>
+
+      <div class="header-actions">
+        <select
+          id="themeSelector"
+          class="theme-selector"
+          aria-label="Choose theme"
+        >
+          <option value="dj-neon">🎧 DJ Neon</option>
+          <option value="jarvis">🤖 Jarvis HUD</option>
+          <option value="mission">🚀 Mission Control</option>
+          <option value="cyberpunk">🌌 Cyberpunk</option>
+          <option value="forest">🌲 Midnight Forest</option>
+        </select>
+
+        <div id="systemStatus" class="system-score">
+          Loading...
+        </div>
+      </div>
+    </header>
+
+    <nav class="mode-nav">
+      <button class="mode-tab mode-btn" data-mode="DJ Mode">
+        DJ MODE
+      </button>
+
+      <button class="mode-tab mode-btn" data-mode="Stream Mode">
+        STREAM MODE
+      </button>
+
+      <button class="mode-tab mode-btn" data-mode="Clean Mode">
+        CLEAN MODE
+      </button>
+
+      <button class="mode-tab mission-tab mode-btn" data-mode="Preflight">
+        MISSION SCAN
+      </button>
+    </nav>
+
+    <main class="cockpit-grid">
+
+      <section class="gauge-panel cpu-panel">
+        <div class="cockpit-gauge cpu-gauge" id="cpuGauge">
+          <div class="gauge-center">
+            <span class="gauge-label">CPU</span>
+            <strong id="cpuValue">--</strong>
+            <small>PROCESSOR LOAD</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="gauge-panel ram-panel">
+        <div class="cockpit-gauge ram-gauge" id="ramGauge">
+          <div class="gauge-center">
+            <span class="gauge-label">RAM</span>
+            <strong id="ramValue">--</strong>
+            <small>MEMORY USED</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="gauge-panel score-panel">
+        <div class="cockpit-gauge score-gauge" id="scoreGauge">
+          <div class="gauge-center">
+            <span class="gauge-label">SCORE</span>
+            <strong id="scoreValue">--</strong>
+            <small id="scoreText">ANALYZING</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="gauge-panel disk-panel">
+        <div class="cockpit-gauge disk-gauge" id="diskGauge">
+          <div class="gauge-center">
+            <span class="gauge-label">DISK</span>
+            <strong id="diskValue">--</strong>
+            <small>MAIN DRIVE</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="network-panel cockpit-card">
+        <div class="card-heading">
+          <h2>NETWORK</h2>
+          <span id="networkStatus">Checking...</span>
+        </div>
+
+        <div class="network-stat">
+          <span>STREAM HEALTH</span>
+          <strong id="uploadValue">--</strong>
+        </div>
+
+        <canvas
+          id="networkGraph"
+          width="320"
+          height="80"
+          aria-label="Network activity graph"
+        ></canvas>
+      </section>
+
+      <section class="visualizer-panel cockpit-card">
+        <div class="card-heading">
+          <h2>DJ PERFORMANCE VISUALIZER</h2>
+          <span id="readinessText">Checking studio...</span>
+        </div>
+
+        <div class="visualizer-wrap">
+          <canvas
+            id="cpuGraph"
+            width="760"
+            height="180"
+            aria-label="CPU history graph"
+          ></canvas>
+
+          <div class="equalizer-overlay" aria-hidden="true">
+            <span style="--level:38%"></span>
+            <span style="--level:62%"></span>
+            <span style="--level:84%"></span>
+            <span style="--level:49%"></span>
+            <span style="--level:73%"></span>
+            <span style="--level:92%"></span>
+            <span style="--level:54%"></span>
+            <span style="--level:80%"></span>
+            <span style="--level:42%"></span>
+            <span style="--level:68%"></span>
+            <span style="--level:96%"></span>
+            <span style="--level:57%"></span>
+            <span style="--level:77%"></span>
+            <span style="--level:46%"></span>
+            <span style="--level:88%"></span>
+            <span style="--level:61%"></span>
+            <span style="--level:71%"></span>
+            <span style="--level:40%"></span>
+            <span style="--level:66%"></span>
+            <span style="--level:90%"></span>
+            <span style="--level:52%"></span>
+            <span style="--level:78%"></span>
+            <span style="--level:44%"></span>
+            <span style="--level:69%"></span>
+            <span style="--level:86%"></span>
+            <span style="--level:58%"></span>
+            <span style="--level:74%"></span>
+            <span style="--level:47%"></span>
+            <span style="--level:82%"></span>
+            <span style="--level:63%"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-panel cockpit-card">
+        <div class="card-heading">
+          <h2>REAL-TIME STATS</h2>
+        </div>
+
+        <div class="compact-stat">
+          <span>FPS</span>
+          <strong>30</strong>
+        </div>
+
+        <div class="compact-stat">
+          <span>CPU LOAD</span>
+          <strong id="cpuStat">Live</strong>
+        </div>
+
+        <div class="compact-stat">
+          <span>RAM LOAD</span>
+          <strong id="ramStat">Live</strong>
+        </div>
+
+        <div class="compact-stat">
+          <span>RISK</span>
+          <strong id="riskStat">Checking</strong>
+        </div>
+      </section>
+
+      <section class="studio-status cockpit-card">
+        <div class="card-heading">
+          <h2>SYSTEM STATUS</h2>
+        </div>
+
+        <div class="status-line">
+          <span class="status-dot"></span>
+          <span>CPU</span>
+          <strong id="cpuHealth">GOOD</strong>
+        </div>
+
+        <div class="status-line">
+          <span class="status-dot"></span>
+          <span>RAM</span>
+          <strong id="ramHealth">GOOD</strong>
+        </div>
+
+        <div class="status-line">
+          <span class="status-dot"></span>
+          <span>DISK</span>
+          <strong id="diskHealth">GOOD</strong>
+        </div>
+
+        <div class="status-line">
+          <span class="status-dot"></span>
+          <span>OBS</span>
+          <strong id="obsStatus">Checking...</strong>
+        </div>
+
+        <div class="status-line">
+          <span class="status-dot"></span>
+          <span>REKORDBOX</span>
+          <strong id="rekordboxStatus">Checking...</strong>
+        </div>
+
+        <div class="status-line">
+          <span class="status-dot"></span>
+          <span>SLEEP GUARD</span>
+          <strong id="sleepStatus">Checking...</strong>
+        </div>
+      </section>
+
+      <section class="process-panel cockpit-card">
+        <div class="card-heading">
+          <h2>TOP PROCESSES</h2>
+        </div>
+
+        <div id="processList" class="process-list">
+          <div class="process-row">
+            <span>Loading...</span>
+            <strong>--</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="ram-history-panel cockpit-card">
+        <div class="card-heading">
+          <h2>RAM HISTORY</h2>
+        </div>
+
+        <canvas
+          id="ramGraph"
+          width="480"
+          height="150"
+          aria-label="RAM history graph"
+        ></canvas>
+      </section>
+
+      <section class="coach-panel cockpit-card">
+        <div class="card-heading">
+          <h2>STREAMINGMAX COACH</h2>
+        </div>
+
+        <div id="coachBox" class="coach-box">
+          <p>Waiting for live system data...</p>
+        </div>
+      </section>
+
+      <section class="timeline-panel cockpit-card">
+        <div class="card-heading">
+          <h2>EVENT TIMELINE</h2>
+          <button
+            class="clear-log-btn"
+            type="button"
+            onclick="document.getElementById('logBox').innerHTML=''"
+          >
+            CLEAR
+          </button>
+        </div>
+
+        <div id="logBox" class="log-box">
+          <p>[StreamingMAX] Cockpit online...</p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="cockpit-footer">
+      <span>BUILT FOR DJS</span>
+      <span class="footer-wave">⌁⌁⌁</span>
+      <span>MADE FOR STREAMERS</span>
+      <span class="footer-wave">⌁⌁⌁</span>
+      <span>OPTIMIZED FOR PERFORMANCE</span>
+    </footer>
+
+  </div>
+
+  <script src="ui/background.js"></script>
+  <script src="ui/navigation.js"></script>
+  <script src="ui/logger.js"></script>
+  <script src="ui/graphs.js"></script>
+  <script src="renderer.js"></script>
+</body>
+</html>

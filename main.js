@@ -75,7 +75,7 @@ async function getLiveStats() {
   const mainNet = netStats && netStats.length ? netStats[0] : null;
 
   const cpuPercent = Math.round(cpuLoad.currentLoad || 0);
-  const ramPercent = Math.round((mem.used / mem.total) * 100);
+  const ramPercent = Math.round((mem.active / mem.total) * 100);
   const diskPercent = mainDisk ? Math.round(mainDisk.use || 0) : 0;
 
   const uploadMbps = mainNet ? mainNet.tx_sec * 8 / 1000000 : 0;

@@ -705,15 +705,3 @@ body.performance-mode * {
       inset 0 0 24px rgba(32, 217, 255, 0.28);
   }
 }
-
-.system-switch.active {
-  color: var(--green);
-  border-color: var(--green);
-  background: rgba(69, 255, 120, 0.1);
-  box-shadow: 0 0 14px rgba(69, 255, 120, 0.22);
-}
-
-.system-light.online {
-  background: var(--green);
-  box-shadow: 0 0 10px var(--green);
-}

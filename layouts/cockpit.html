@@ -2,244 +2,335 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StreamingMAX Cockpit v2</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>StreamingMAX Mission Control</title>
+
   <link rel="stylesheet" href="../themes/cockpit.css" />
 </head>
 
 <body>
-  <div class="cockpit-shell">
+  <div id="startupRoot"></div>
+
+  <div class="app-shell">
+
     <header class="topbar">
-      <div class="brand">
-        <div class="brand-icon">S</div>
+      <div class="brand-block">
+        <div class="brand-mark">S</div>
 
         <div>
           <h1>Streaming<span>MAX</span></h1>
-          <p>DJ & Streaming Mission Control</p>
+          <p>DJ &amp; Streaming Mission Control</p>
         </div>
       </div>
 
-      <div class="overall-status">
-        <span class="status-light"></span>
-        <div>
-          <small>MISSION STATUS</small>
-          <strong id="missionStatus">SYSTEM READY</strong>
+      <div class="topbar-center">
+        <div class="version-badge">
+          v4.0 DEVELOPMENT
+        </div>
+      </div>
+
+      <div class="header-metrics">
+        <div class="header-metric">
+          <small>LOCAL TIME</small>
+          <strong id="liveClock">--:--:--</strong>
+        </div>
+
+        <div class="header-metric">
+          <small>SESSION</small>
+          <strong id="sessionTimer">00:00:00</strong>
         </div>
       </div>
     </header>
 
     <nav class="modebar">
-      <button id="djModeBtn">DJ MODE</button>
-      <button id="streamModeBtn">STREAM MODE</button>
-      <button id="cleanModeBtn">CLEAN MODE</button>
-      <button id="missionScanBtn" class="mission-button">
+      <button id="djModeBtn" type="button">DJ MODE</button>
+      <button id="streamModeBtn" type="button">STREAM MODE</button>
+      <button id="cleanModeBtn" type="button">CLEAN MODE</button>
+      <button id="missionScanBtn" class="mission-button" type="button">
         MISSION SCAN
       </button>
     </nav>
 
-    <main class="cockpit-grid">
-      <section class="gauge-card cpu-card">
-        <div class="card-title">
-          <span>CPU LOAD</span>
-          <strong id="cpuLabel">32%</strong>
-        </div>
+    <main class="mission-grid">
 
-        <canvas id="cpuGauge" width="220" height="220"></canvas>
-
-        <div class="gauge-footer">
-          <span>PROCESSOR</span>
-          <strong>GOOD</strong>
-        </div>
-      </section>
-
-      <section class="gauge-card ram-card">
-        <div class="card-title">
-          <span>MEMORY</span>
-          <strong id="ramLabel">61%</strong>
-        </div>
-
-        <canvas id="ramGauge" width="220" height="220"></canvas>
-
-        <div class="gauge-footer">
-          <span>RAM STATUS</span>
-          <strong>STABLE</strong>
-        </div>
-      </section>
-
-      <section class="gauge-card disk-card">
-        <div class="card-title">
-          <span>DISK</span>
-          <strong id="diskLabel">24%</strong>
-        </div>
-
-        <canvas id="diskGauge" width="220" height="220"></canvas>
-
-        <div class="gauge-footer">
-          <span>STORAGE</span>
-          <strong>HEALTHY</strong>
-        </div>
-      </section>
-
-      <section class="gauge-card score-card">
-        <div class="card-title">
-          <span>STREAM SCORE</span>
-          <strong id="scoreLabel">96</strong>
-        </div>
-
-        <canvas id="scoreGauge" width="220" height="220"></canvas>
-
-        <div class="gauge-footer">
-          <span>READINESS</span>
-          <strong>READY</strong>
-        </div>
-      </section>
-
-      <section class="visualizer-card panel">
+      <!-- ATLAS -->
+      <section class="atlas-card panel">
         <div class="panel-heading">
           <div>
-            <h2>DJ PERFORMANCE VISUALIZER</h2>
-            <p>Live studio activity</p>
+            <h2>ATLAS</h2>
+            <p>Streaming intelligence and mission guidance</p>
           </div>
 
-          <span class="live-badge">LIVE</span>
+          <span id="atlasState" class="status-pill">
+            ANALYZING
+          </span>
         </div>
 
-        <div class="equalizer" aria-hidden="true">
-          <span style="--height: 35%"></span>
-          <span style="--height: 62%"></span>
-          <span style="--height: 84%"></span>
-          <span style="--height: 48%"></span>
-          <span style="--height: 75%"></span>
-          <span style="--height: 93%"></span>
-          <span style="--height: 58%"></span>
-          <span style="--height: 81%"></span>
-          <span style="--height: 42%"></span>
-          <span style="--height: 69%"></span>
-          <span style="--height: 96%"></span>
-          <span style="--height: 54%"></span>
-          <span style="--height: 77%"></span>
-          <span style="--height: 45%"></span>
-          <span style="--height: 88%"></span>
-          <span style="--height: 66%"></span>
-          <span style="--height: 73%"></span>
-          <span style="--height: 39%"></span>
-          <span style="--height: 64%"></span>
-          <span style="--height: 91%"></span>
-          <span style="--height: 52%"></span>
-          <span style="--height: 79%"></span>
-          <span style="--height: 47%"></span>
-          <span style="--height: 71%"></span>
-          <span style="--height: 86%"></span>
-          <span style="--height: 56%"></span>
-          <span style="--height: 74%"></span>
-          <span style="--height: 43%"></span>
-          <span style="--height: 82%"></span>
-          <span style="--height: 61%"></span>
-          <span style="--height: 92%"></span>
-          <span style="--height: 51%"></span>
+        <div class="atlas-layout">
+          <div class="atlas-orb" aria-hidden="true">
+            <div class="atlas-orb-core"></div>
+          </div>
+
+          <div class="atlas-content">
+            <h3 id="atlasGreeting">
+              Good evening, Jonathan.
+            </h3>
+
+            <p id="atlasSummary">
+              Reviewing system health and studio readiness.
+            </p>
+
+            <div
+              id="atlasRecommendations"
+              class="atlas-recommendations"
+            >
+              <p>Waiting for live system information...</p>
+            </div>
+          </div>
         </div>
 
-        <div class="visualizer-stats">
-          <div>
-            <small>MASTER LEVEL</small>
-            <strong>-6.2 dB</strong>
-          </div>
+        <div class="atlas-actions">
+          <button id="atlasObsBtn" type="button">OPEN OBS</button>
 
-          <div>
-            <small>STREAM HEALTH</small>
-            <strong>EXCELLENT</strong>
-          </div>
+          <button id="atlasRekordboxBtn" type="button">
+            OPEN REKORDBOX
+          </button>
 
-          <div>
-            <small>DROPPED-FRAME RISK</small>
-            <strong>LOW</strong>
-          </div>
+          <button id="atlasSleepBtn" type="button">
+            ENABLE SLEEP GUARD
+          </button>
+
+          <button id="atlasScanBtn" type="button">
+            RUN PRE-FLIGHT
+          </button>
         </div>
       </section>
 
-      <section class="studio-card panel">
+      <!-- STREAM SCORE -->
+      <section class="score-card panel">
         <div class="panel-heading">
           <div>
-            <h2>STUDIO STATUS</h2>
-            <p>Connected services</p>
+            <h2>STREAM SCORE</h2>
+            <p>Overall mission readiness</p>
+          </div>
+
+          <span id="missionStatus" class="status-pill">
+            CHECKING
+          </span>
+        </div>
+
+        <canvas
+          id="scoreGauge"
+          width="260"
+          height="260"
+          aria-label="Stream readiness score"
+        ></canvas>
+
+        <div class="score-readout">
+          <strong id="scoreLabel">--</strong>
+          <span>/ 100</span>
+        </div>
+
+        <p id="scoreGrade" class="score-grade">
+          ANALYZING SYSTEMS
+        </p>
+      </section>
+
+      <!-- PRE-FLIGHT -->
+      <section class="preflight-card panel">
+        <div class="panel-heading">
+          <div>
+            <h2>PRE-FLIGHT CHECK</h2>
+            <p>System-by-system readiness scan</p>
+          </div>
+
+          <span id="preflightStatus" class="status-pill">
+            STANDBY
+          </span>
+        </div>
+
+        <div id="preflightList" class="preflight-list">
+
+          <div class="preflight-row" data-check="cpu">
+            <span class="check-light"></span>
+            <span>CPU Health</span>
+            <strong>WAITING</strong>
+          </div>
+
+          <div class="preflight-row" data-check="ram">
+            <span class="check-light"></span>
+            <span>Memory Health</span>
+            <strong>WAITING</strong>
+          </div>
+
+          <div class="preflight-row" data-check="disk">
+            <span class="check-light"></span>
+            <span>Storage</span>
+            <strong>WAITING</strong>
+          </div>
+
+          <div class="preflight-row" data-check="obs">
+            <span class="check-light"></span>
+            <span>OBS Studio</span>
+            <strong>WAITING</strong>
+          </div>
+
+          <div class="preflight-row" data-check="rekordbox">
+            <span class="check-light"></span>
+            <span>Rekordbox</span>
+            <strong>WAITING</strong>
+          </div>
+
+          <div class="preflight-row" data-check="network">
+            <span class="check-light"></span>
+            <span>Network</span>
+            <strong>WAITING</strong>
+          </div>
+
+          <div class="preflight-row" data-check="sleep">
+            <span class="check-light"></span>
+            <span>Sleep Guard</span>
+            <strong>WAITING</strong>
+          </div>
+
+        </div>
+
+        <button
+          id="runPreflightBtn"
+          class="primary-action"
+          type="button"
+        >
+          RUN PRE-FLIGHT
+        </button>
+      </section>
+
+      <!-- PERFORMANCE -->
+      <section class="performance-card panel">
+        <div class="panel-heading">
+          <div>
+            <h2>LIVE PERFORMANCE</h2>
+            <p>Current system workload</p>
+          </div>
+
+          <span class="live-indicator">LIVE</span>
+        </div>
+
+        <div class="gauge-grid">
+
+          <article class="metric-gauge">
+            <canvas
+              id="cpuGauge"
+              width="190"
+              height="190"
+            ></canvas>
+
+            <div>
+              <small>CPU</small>
+              <strong id="cpuLabel">--%</strong>
+            </div>
+          </article>
+
+          <article class="metric-gauge">
+            <canvas
+              id="ramGauge"
+              width="190"
+              height="190"
+            ></canvas>
+
+            <div>
+              <small>ACTIVE RAM</small>
+              <strong id="ramLabel">--%</strong>
+              <span id="ramUsageText">-- / -- GB</span>
+            </div>
+          </article>
+
+          <article class="metric-gauge">
+            <canvas
+              id="diskGauge"
+              width="190"
+              height="190"
+            ></canvas>
+
+            <div>
+              <small>DISK</small>
+              <strong id="diskLabel">--%</strong>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- SYSTEMS -->
+      <section class="systems-card panel">
+        <div class="panel-heading">
+          <div>
+            <h2>MISSION SYSTEMS</h2>
+            <p>Connected applications and safeguards</p>
           </div>
         </div>
 
-        <div class="status-row">
-          <span class="device-icon">🎧</span>
-          <span>Rekordbox</span>
-          <strong>RUNNING</strong>
-        </div>
-
-        <div class="status-row">
-          <span class="device-icon">🎥</span>
+        <div class="system-row">
+          <span class="system-light" id="obsLight"></span>
           <span>OBS Studio</span>
-          <strong>RUNNING</strong>
+          <strong id="obsStatus">CHECKING</strong>
         </div>
 
-        <div class="status-row">
-          <span class="device-icon">🎤</span>
-          <span>Audio Interface</span>
-          <strong>CONNECTED</strong>
+        <div class="system-row">
+          <span class="system-light" id="rekordboxLight"></span>
+          <span>Rekordbox</span>
+          <strong id="rekordboxStatus">CHECKING</strong>
         </div>
 
-        <div class="status-row">
-          <span class="device-icon">📷</span>
-          <span>Camera</span>
-          <strong>CONNECTED</strong>
+        <div class="system-row">
+          <span class="system-light" id="networkLight"></span>
+          <span>Network</span>
+          <strong id="networkStatus">CHECKING</strong>
         </div>
 
-        <div class="status-row">
-  <span class="device-icon">🌐</span>
-  <span>Network</span>
-  <strong id="networkQualityStatus">NOT TESTED</strong>
-</div>
+        <div class="system-row">
+          <span class="system-light" id="sleepLight"></span>
+          <span>Sleep Guard</span>
 
-<div class="speed-test-box">
-  <div class="speed-result">
-    <span>DOWNLOAD</span>
-    <strong id="speedDownload">-- Mbps</strong>
-  </div>
+          <button
+            id="sleepToggleBtn"
+            class="system-switch"
+            type="button"
+          >
+            OFF
+          </button>
+        </div>
 
-  <div class="speed-result">
-    <span>UPLOAD</span>
-    <strong id="speedUpload">-- Mbps</strong>
-  </div>
-
-  <div class="speed-result">
-    <span>RESPONSIVENESS</span>
-    <strong id="speedResponse">-- RPM</strong>
-  </div>
-
-  <button id="speedTestBtn" class="speed-test-btn">
-    RUN SPEED TEST
-  </button>
-</div>
-
-      <section class="coach-card panel">
-        <div class="panel-heading">
+        <div class="speed-test-results">
           <div>
-            <h2>STREAMINGMAX COACH</h2>
-            <p>System recommendations</p>
+            <small>DOWNLOAD</small>
+            <strong id="speedDownload">-- Mbps</strong>
+          </div>
+
+          <div>
+            <small>UPLOAD</small>
+            <strong id="speedUpload">-- Mbps</strong>
+          </div>
+
+          <div>
+            <small>RESPONSIVENESS</small>
+            <strong id="speedResponse">-- RPM</strong>
           </div>
         </div>
 
-        <div class="coach-message success">
-          <span>✓</span>
-          <p>Your system is ready for streaming.</p>
-        </div>
-
-        <div class="coach-message">
-          <span>i</span>
-          <p>Recommended OBS bitrate: 8000 kbps.</p>
-        </div>
-
-        <div class="coach-message">
-          <span>i</span>
-          <p>Close unused Safari tabs to recover memory.</p>
-        </div>
+        <button
+          id="speedTestBtn"
+          class="secondary-action"
+          type="button"
+        >
+          RUN SPEED TEST
+        </button>
       </section>
 
+      <!-- TIMELINE -->
       <section class="timeline-card panel">
         <div class="panel-heading">
           <div>
@@ -247,18 +338,44 @@
             <p>Recent cockpit activity</p>
           </div>
 
-          <button id="clearTimelineBtn" class="small-button">
+          <button
+            id="clearTimelineBtn"
+            class="text-button"
+            type="button"
+          >
             CLEAR
           </button>
         </div>
 
         <div id="timeline" class="timeline">
-          <p><time>23:42:01</time> StreamingMAX cockpit initialized.</p>
-          <p><time>23:42:02</time> CPU monitoring online.</p>
-          <p><time>23:42:03</time> Studio systems checked.</p>
-          <p><time>23:42:04</time> Mission status: ready.</p>
+          <p>
+            <time>--:--:--</time>
+            StreamingMAX Mission Control initialized.
+          </p>
         </div>
       </section>
+
+      <!-- GO LIVE -->
+      <section class="go-live-card panel">
+        <div class="go-live-copy">
+          <small>MISSION CONTROL</small>
+          <h2 id="goLiveHeading">READY WHEN YOU ARE</h2>
+
+          <p id="goLiveMessage">
+            Run the pre-flight check before beginning your stream.
+          </p>
+        </div>
+
+        <button
+          id="goLiveBtn"
+          class="go-live-button"
+          type="button"
+        >
+          <span>🚀</span>
+          GO LIVE
+        </button>
+      </section>
+
     </main>
 
     <footer class="footer">
@@ -266,13 +383,14 @@
       <span>•</span>
       <span>MADE FOR STREAMERS</span>
       <span>•</span>
-      <span>OPTIMIZED FOR PERFORMANCE</span>
+      <span>POWERED BY ATLAS</span>
     </footer>
+
   </div>
 
   <script src="../ui/gaugeEngine.js"></script>
-<script src="../ui/startup.js"></script>
-<script src="../ui/cockpit.js"></script>
-
+  <script src="../ui/startup.js"></script>
+  <script src="../ui/sessionTimer.js"></script>
+  <script src="../ui/cockpit.js"></script>
 </body>
 </html>

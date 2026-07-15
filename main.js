@@ -1,5 +1,6 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
 app.disableHardwareAcceleration();
+const { buildPreflight } = require("./modules/preflightEngine");
 const path = require("path");
 const os = require("os");
 const si = require("systeminformation");
@@ -8,6 +9,7 @@ const { calculatePerformance } = require("./modules/performanceEngine");
 const { getTopMemoryProcesses } = require("./modules/processMonitor");
 const { detectStudio } = require("./modules/studioDetector");
 const { buildStudioReady } = require("./modules/studioReady");
+const { buildAtlasMessage } = require("./modules/atlasEngine");
 
 let mainWindow;
 let caffeinateProcess = null;
@@ -29,7 +31,11 @@ function createWindow() {
   });
 
   mainWindow.loadFile("layouts/cockpit.html");
-  mainWindow.once("ready-to-show", () => mainWindow.show());
+
+  mainWindow.once("ready-to-show", () => {
+    mainWindow.show();
+    mainWindow.webContents.openDevTools({ mode: "detach" });
+  });
 }
 
 function runCommand(command) {
@@ -234,6 +240,63 @@ app.on("window-all-closed", () => {
 
 ipcMain.handle("get-system-info", async () => getLiveStats());
 ipcMain.handle("get-live-stats", async () => getLiveStats());
+ipcMain.handle("launch-studio-app", async (_event, appName) => {
+  const allowedApps = {
+  obs: {
+    type: "name",
+    value: "OBS"
+  },
+  rekordbox: {
+    type: "path",
+    value: "/Applications/rekordbox 7/rekordbox.app"
+  }
+};
+
+  const appConfig = allowedApps[appName];
+
+if (!appConfig) {
+    return {
+      success: false,
+      message: "Unknown application."
+    };
+  }
+
+const command =
+  appConfig.type === "path"
+    ? `open "${appConfig.value}"`
+    : `open -a "${appConfig.value}"`;
+
+const result = await runCommand(command);
+
+return {
+  success: result.ok,
+  message: result.ok
+    ? `${appName === "rekordbox" ? "Rekordbox" : appConfig.value} launch requested.`
+    : `Could not open ${appName}.`
+};
+});
+
+ipcMain.handle("run-preflight-check", async () => {
+  const stats = await getLiveStats();
+  return buildPreflight(stats);
+});
+
+ipcMain.handle("set-sleep-guard", async (_event, enabled) => {
+  const message = enabled ? startCaffeinate() : stopCaffeinate();
+
+  return {
+    success: true,
+    enabled: Boolean(caffeinateProcess),
+    message
+  };
+});
+
+ipcMain.handle("get-sleep-guard", async () => {
+  return {
+    enabled: Boolean(caffeinateProcess)
+  };
+});
+
 ipcMain.handle("get-top-processes", async () => {
   return getTopMemoryProcesses();
 });
@@ -273,4 +336,12 @@ ipcMain.handle("get-readiness", async () => {
 
 ipcMain.handle("run-speed-test", async () => {
   return runSpeedTest();
+});
+
+ipcMain.handle("get-atlas-message", async () => {
+  const stats = await getLiveStats();
+  const studio = await detectStudio();
+  const readiness = calculateReadiness(stats, studio);
+
+  return buildAtlasMessage(stats, studio, readiness);
 });

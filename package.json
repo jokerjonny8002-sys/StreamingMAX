@@ -1,6 +1,6 @@
 {
   "name": "streamingmax",
-  "version": "3.0.0-beta.1",
+  "version": "4.1.0-alpha.1",
   "description": "StreamingMAX - DJ Performance Optimizer",
   "author": "Jonathan Overfelt",
   "main": "main.js",

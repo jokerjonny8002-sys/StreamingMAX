@@ -17,5 +17,10 @@ contextBridge.exposeInMainWorld("streamingMax", {
 
 getSleepGuard: () =>
   ipcRenderer.invoke("get-sleep-guard"),
+getProfile: () =>
+  ipcRenderer.invoke("get-profile"),
+
+saveProfile: profile =>
+  ipcRenderer.invoke("save-profile", profile),
   runSpeedTest: () => ipcRenderer.invoke("run-speed-test")
 });

@@ -463,9 +463,86 @@ async function refreshSleepGuard() {
   }
 }
 
+async function loadProfileSetup() {
+  const setup = document.getElementById("profileSetup");
+  const saveButton = document.getElementById("saveProfileBtn");
+  const errorText = document.getElementById("profileError");
+
+  if (!setup || !saveButton) return;
+
+  try {
+    const profile = await window.streamingMax.getProfile();
+
+    if (!profile.setupComplete) {
+      setup.classList.remove("hidden");
+    } else {
+      setup.classList.add("hidden");
+      await refreshAtlas();
+    }
+
+    saveButton.onclick = async () => {
+      const realName =
+        document.getElementById("profileRealName").value.trim();
+
+      const djName =
+        document.getElementById("profileDjName").value.trim();
+
+      const nickname =
+        document.getElementById("profileNickname").value.trim();
+
+      const preferredNameType =
+        document.getElementById("profilePreferredName").value;
+
+      const selectedName = {
+        realName,
+        djName,
+        nickname
+      }[preferredNameType];
+
+      if (!selectedName) {
+        errorText.textContent =
+          "Enter the name you selected for ATLAS to use.";
+        return;
+      }
+
+      saveButton.disabled = true;
+      saveButton.textContent = "SAVING...";
+      errorText.textContent = "";
+
+      try {
+        const saved = await window.streamingMax.saveProfile({
+          realName,
+          djName,
+          nickname,
+          preferredNameType,
+          atlasPersonality: "casual"
+        });
+
+        setup.classList.add("hidden");
+
+        addTimeline(
+          `ATLAS: Profile saved. Welcome, ${saved.displayName}.`
+        );
+
+        await refreshAtlas();
+      } catch (error) {
+        errorText.textContent =
+          `Could not save profile: ${error.message}`;
+      } finally {
+        saveButton.disabled = false;
+        saveButton.textContent = "SAVE PROFILE";
+      }
+    };
+  } catch (error) {
+    addTimeline(`Profile loading error: ${error.message}`);
+  }
+}
+
+
 async function toggleSleepGuard() {
   const button =
     document.getElementById("sleepToggleBtn");
+
 
   const currentlyEnabled =
     button?.textContent.trim() === "ON";
@@ -524,5 +601,27 @@ if (atlasScanBtn) {
 
 refreshSleepGuard();
 
+async function loadProfile() {
+  try {
+    const profile = await window.streamingMax.getProfile();
+
+    console.log("PROFILE:", profile);
+
+    if (!profile.setupComplete) {
+      addTimeline("ATLAS: No profile found.");
+    } else {
+      addTimeline(
+        `ATLAS: Welcome back, ${profile.displayName}.`
+      );
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+loadProfile();
+
 addTimeline("Cockpit v2 systems online.");
 runStartupSequence();
+
+loadProfileSetup();

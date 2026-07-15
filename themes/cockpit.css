@@ -717,3 +717,107 @@ body.performance-mode * {
   background: var(--green);
   box-shadow: 0 0 10px var(--green);
 }
+
+/* ===== First-Run Profile Setup ===== */
+
+.profile-setup {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at top, rgba(32, 217, 255, 0.14), transparent 38%),
+    rgba(1, 5, 10, 0.94);
+  backdrop-filter: blur(14px);
+}
+
+.profile-setup.hidden {
+  display: none;
+}
+
+.profile-setup-card {
+  width: min(520px, 100%);
+  padding: 28px;
+  border: 1px solid rgba(32, 217, 255, 0.45);
+  border-radius: 18px;
+  background:
+    linear-gradient(
+      155deg,
+      rgba(12, 28, 48, 0.98),
+      rgba(3, 9, 17, 0.99)
+    );
+  box-shadow:
+    0 0 34px rgba(32, 217, 255, 0.2),
+    0 24px 70px rgba(0, 0, 0, 0.65);
+}
+
+.profile-setup-card h2 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  letter-spacing: 0.8px;
+}
+
+.profile-setup-card > p {
+  margin: 0 0 22px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.profile-setup-card label {
+  display: grid;
+  gap: 7px;
+  margin-bottom: 15px;
+  color: #c9d7e7;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.profile-setup-card input,
+.profile-setup-card select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 13px;
+  border: 1px solid rgba(93, 139, 183, 0.28);
+  border-radius: 9px;
+  color: #ffffff;
+  background: rgba(0, 5, 10, 0.72);
+  outline: none;
+}
+
+.profile-setup-card input:focus,
+.profile-setup-card select:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 12px rgba(32, 217, 255, 0.16);
+}
+
+#saveProfileBtn {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 5px;
+  border: 1px solid var(--cyan);
+  border-radius: 10px;
+  color: var(--cyan);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(18, 55, 82, 0.96),
+      rgba(4, 14, 24, 0.99)
+    );
+  cursor: pointer;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+}
+
+#saveProfileBtn:hover {
+  box-shadow: 0 0 18px rgba(32, 217, 255, 0.28);
+}
+
+.profile-error {
+  min-height: 18px;
+  margin-top: 12px !important;
+  color: var(--red) !important;
+  font-size: 11px;
+}

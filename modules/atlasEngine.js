@@ -1,4 +1,4 @@
-function buildAtlasMessage(stats, studio, readiness) {
+function buildAtlasMessage(stats, studio, readiness, displayName = "Streamer") {
   const advice = [];
   let state = "READY";
 
@@ -44,7 +44,7 @@ function buildAtlasMessage(stats, studio, readiness) {
     : `Mission status needs attention. Stream Score is ${readiness.score}/100.`;
 
   return {
-    greeting: "Good evening, Jonathan.",
+    greeting: `Good evening, ${displayName}.`,
     summary,
     advice,
     state,

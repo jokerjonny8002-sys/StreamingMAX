@@ -27,6 +27,43 @@
         </div>
       </div>
 
+      <div id="profileSetup" class="profile-setup hidden">
+  <div class="profile-setup-card">
+    <h2>WELCOME TO STREAMINGMAX</h2>
+    <p>ATLAS needs a few details before Mission Control comes online.</p>
+
+    <label>
+      Real Name
+      <input id="profileRealName" type="text" placeholder="Jonathan" />
+    </label>
+
+    <label>
+      DJ Name
+      <input id="profileDjName" type="text" placeholder="JokerJonny" />
+    </label>
+
+    <label>
+      Nickname
+      <input id="profileNickname" type="text" placeholder="Papa Bear" />
+    </label>
+
+    <label>
+      How should ATLAS address you?
+      <select id="profilePreferredName">
+        <option value="realName">Real Name</option>
+        <option value="djName">DJ Name</option>
+        <option value="nickname">Nickname</option>
+      </select>
+    </label>
+
+    <button id="saveProfileBtn" type="button">
+      SAVE PROFILE
+    </button>
+
+    <p id="profileError" class="profile-error"></p>
+  </div>
+</div>
+
       <div class="topbar-center">
         <div class="version-badge">
           v4.0 DEVELOPMENT
@@ -77,7 +114,7 @@
 
           <div class="atlas-content">
             <h3 id="atlasGreeting">
-              Good evening, Jonathan.
+              Good evening, Streamer.
             </h3>
 
             <p id="atlasSummary">

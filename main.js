@@ -10,6 +10,11 @@ const { getTopMemoryProcesses } = require("./modules/processMonitor");
 const { detectStudio } = require("./modules/studioDetector");
 const { buildStudioReady } = require("./modules/studioReady");
 const { buildAtlasMessage } = require("./modules/atlasEngine");
+const {
+  getProfile,
+  saveProfile,
+  getDisplayName
+} = require("./modules/profileManager");
 
 let mainWindow;
 let caffeinateProcess = null;
@@ -338,10 +343,35 @@ ipcMain.handle("run-speed-test", async () => {
   return runSpeedTest();
 });
 
+ipcMain.handle("get-profile", async () => {
+  const profile = getProfile();
+
+  return {
+    ...profile,
+    displayName: getDisplayName(profile)
+  };
+});
+
+ipcMain.handle("save-profile", async (_event, profile) => {
+  const saved = saveProfile(profile);
+
+  return {
+    ...saved,
+    displayName: getDisplayName(saved)
+  };
+});
+
 ipcMain.handle("get-atlas-message", async () => {
   const stats = await getLiveStats();
   const studio = await detectStudio();
   const readiness = calculateReadiness(stats, studio);
+  const profile = getProfile();
+  const displayName = getDisplayName(profile);
 
-  return buildAtlasMessage(stats, studio, readiness);
+  return buildAtlasMessage(
+    stats,
+    studio,
+    readiness,
+    displayName
+  );
 });

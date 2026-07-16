@@ -1,0 +1,28 @@
+# Idea Backlog
+
+- OBS-style dock system
+- Widget marketplace
+- Mission Packs
+- Voice commands
+- ATLAS startup greeting
+- Reactive ATLAS orb
+- Developer Mode
+- Grid overlay
+- Reload UI button
+- Export logs
+- System process explainer
+- Safe cleanup recommendations
+- AI-assisted bitrate selection
+- Camera battery monitoring
+- Audio clipping detection
+- Dropped-frame monitoring
+- Multi-PC synchronization
+- Mobile companion
+- Cloud profile backup
+- Studio diagram
+- Export studio report
+- Community equipment packs
+- Gaming mission profile
+- Programming mission profile
+- Video-editing mission profile
+- Everyday computer mode

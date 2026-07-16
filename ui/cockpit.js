@@ -625,3 +625,217 @@ addTimeline("Cockpit v2 systems online.");
 runStartupSequence();
 
 loadProfileSetup();
+
+// ===== Studio Builder =====
+
+async function getStudioProfile() {
+  const profile = await window.streamingMax.getProfile();
+
+  return {
+    ...profile,
+    studioEquipment: Array.isArray(profile.studioEquipment)
+      ? profile.studioEquipment
+      : []
+  };
+}
+
+function renderEquipmentResults(devices = []) {
+  const results = document.getElementById("equipmentResults");
+  const count = document.getElementById("equipmentCount");
+
+  if (!results) return;
+
+  if (count) {
+    count.textContent =
+      `${devices.length} DEVICE${devices.length === 1 ? "" : "S"}`;
+  }
+
+  if (!devices.length) {
+    results.innerHTML = `
+      <p class="equipment-empty">
+        No matching equipment found.
+      </p>
+    `;
+    return;
+  }
+
+  results.innerHTML = devices.map(device => `
+    <article class="equipment-result">
+      <div>
+        <h4>${device.brand} ${device.name}</h4>
+        <p>
+          ${device.equipmentType} ·
+          ${(device.software || []).join(", ") || "No software listed"}
+        </p>
+      </div>
+
+      <button
+        type="button"
+        data-add-equipment="${device.id}"
+      >
+        ADD
+      </button>
+    </article>
+  `).join("");
+
+  results.querySelectorAll("[data-add-equipment]")
+    .forEach(button => {
+      button.onclick = async () => {
+        await addEquipmentToStudio(
+          button.dataset.addEquipment
+        );
+      };
+    });
+}
+
+async function renderMyStudio() {
+  const list = document.getElementById("myStudioList");
+  const count = document.getElementById("myStudioCount");
+
+  if (!list) return;
+
+  const profile = await getStudioProfile();
+  const ids = profile.studioEquipment;
+
+  if (count) {
+    count.textContent =
+      `${ids.length} ITEM${ids.length === 1 ? "" : "S"}`;
+  }
+
+  if (!ids.length) {
+    list.innerHTML = `
+      <p class="equipment-empty">
+        No equipment added yet.
+      </p>
+    `;
+    return;
+  }
+
+  const devices = (
+    await Promise.all(
+      ids.map(id =>
+        window.streamingMax.atlasLibraryGet(id)
+      )
+    )
+  ).filter(Boolean);
+
+  list.innerHTML = devices.map(device => `
+    <article class="my-studio-item">
+      <div>
+        <h4>${device.brand} ${device.name}</h4>
+        <p>
+          ${device.category || device.equipmentType}
+        </p>
+      </div>
+
+      <button
+        type="button"
+        data-remove-equipment="${device.id}"
+      >
+        REMOVE
+      </button>
+    </article>
+  `).join("");
+
+  list.querySelectorAll("[data-remove-equipment]")
+    .forEach(button => {
+      button.onclick = async () => {
+        await removeEquipmentFromStudio(
+          button.dataset.removeEquipment
+        );
+      };
+    });
+}
+
+async function addEquipmentToStudio(deviceId) {
+  try {
+    const profile = await getStudioProfile();
+
+    if (!profile.studioEquipment.includes(deviceId)) {
+      profile.studioEquipment.push(deviceId);
+    }
+
+    await window.streamingMax.saveProfile(profile);
+    await renderMyStudio();
+
+    const device =
+      await window.streamingMax.atlasLibraryGet(deviceId);
+
+    addTimeline(
+      `ATLAS: ${device?.name || deviceId} added to studio.`
+    );
+  } catch (error) {
+    addTimeline(
+      `Studio Builder error: ${error.message}`
+    );
+  }
+}
+
+async function removeEquipmentFromStudio(deviceId) {
+  try {
+    const profile = await getStudioProfile();
+
+    profile.studioEquipment =
+      profile.studioEquipment.filter(
+        id => id !== deviceId
+      );
+
+    await window.streamingMax.saveProfile(profile);
+    await renderMyStudio();
+
+    const device =
+      await window.streamingMax.atlasLibraryGet(deviceId);
+
+    addTimeline(
+      `ATLAS: ${device?.name || deviceId} removed from studio.`
+    );
+  } catch (error) {
+    addTimeline(
+      `Studio Builder error: ${error.message}`
+    );
+  }
+}
+
+async function searchStudioEquipment() {
+  const input =
+    document.getElementById("equipmentSearchInput");
+
+  if (!input) return;
+
+  try {
+    const devices =
+      await window.streamingMax.atlasLibrarySearch(
+        input.value
+      );
+
+    renderEquipmentResults(devices);
+  } catch (error) {
+    addTimeline(
+      `Equipment search error: ${error.message}`
+    );
+  }
+}
+
+function initializeStudioBuilder() {
+  const searchButton =
+    document.getElementById("equipmentSearchBtn");
+
+  const searchInput =
+    document.getElementById("equipmentSearchInput");
+
+  if (searchButton) {
+    searchButton.onclick = searchStudioEquipment;
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener("keydown", event => {
+      if (event.key === "Enter") {
+        searchStudioEquipment();
+      }
+    });
+  }
+
+  renderMyStudio();
+}
+
+initializeStudioBuilder();

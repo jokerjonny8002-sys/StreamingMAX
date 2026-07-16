@@ -8,7 +8,8 @@ const defaultProfile = {
   djName: "",
   nickname: "",
   preferredNameType: "realName",
-  atlasPersonality: "casual"
+  atlasPersonality: "casual",
+  studioEquipment: []
 };
 
 function getProfilePath() {

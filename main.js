@@ -2,6 +2,11 @@ const { app, BrowserWindow, ipcMain } = require("electron");
 app.disableHardwareAcceleration();
 const { buildPreflight } = require("./modules/preflightEngine");
 const path = require("path");
+const {
+  loadEquipmentDatabase,
+  searchEquipment,
+  getEquipmentById
+} = require("./modules/equipmentManager");
 const os = require("os");
 const si = require("systeminformation");
 const { exec } = require("child_process");
@@ -16,6 +21,7 @@ const {
   getDisplayName
 } = require("./modules/profileManager");
 
+const atlasLibrary = require("./modules/atlasLibrary");
 let mainWindow;
 let caffeinateProcess = null;
 
@@ -244,6 +250,17 @@ app.on("window-all-closed", () => {
 });
 
 ipcMain.handle("get-system-info", async () => getLiveStats());
+ipcMain.handle("get-equipment-database", async () => {
+  return loadEquipmentDatabase();
+});
+
+ipcMain.handle("search-equipment", async (_event, query) => {
+  return searchEquipment(query);
+});
+
+ipcMain.handle("get-equipment-by-id", async (_event, id) => {
+  return getEquipmentById(id);
+});
 ipcMain.handle("get-live-stats", async () => getLiveStats());
 ipcMain.handle("launch-studio-app", async (_event, appName) => {
   const allowedApps = {
@@ -375,3 +392,27 @@ ipcMain.handle("get-atlas-message", async () => {
     displayName
   );
 });
+
+
+ipcMain.handle("atlas-library-search", async (_event, query) => {
+  return atlasLibrary.search(query);
+});
+
+ipcMain.handle("atlas-library-get", async (_event, deviceId) => {
+  return atlasLibrary.get(deviceId);
+});
+
+ipcMain.handle("atlas-library-stats", async () => {
+  return atlasLibrary.getStats();
+});
+
+ipcMain.handle("atlas-library-categories", async () => {
+  return atlasLibrary.getCategories();
+});
+
+ipcMain.handle(
+  "atlas-library-manufacturer",
+  async (_event, manufacturer) => {
+    return atlasLibrary.findByManufacturer(manufacturer);
+  }
+);

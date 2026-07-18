@@ -1,0 +1,158 @@
+[
+  {
+    "id": "elgato-cam-link-4k",
+    "brand": "Elgato",
+    "name": "Cam Link 4K",
+    "equipmentType": "streamgear",
+    "category": "Capture Device",
+    "description": "HDMI-to-USB capture device.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [
+      "OBS Studio",
+      "Elgato Camera Hub"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "input": "HDMI",
+      "output": "USB"
+    },
+    "usbDetect": [
+      "Cam Link 4K",
+      "Elgato Cam Link 4K"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "elgato-cam-link-4k",
+    "manufacturer": "Elgato",
+    "displayName": "Cam Link 4K",
+    "family": "Cam Link",
+    "model": "4K",
+    "subcategory": "Capture Device",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "input": "HDMI",
+      "output": "USB"
+    },
+    "connections": [],
+    "compatibleWith": [
+      "OBS Studio",
+      "Elgato Camera Hub"
+    ],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  },
+  {
+    "id": "elgato-stream-deck-plus",
+    "brand": "Elgato",
+    "name": "Stream Deck +",
+    "equipmentType": "streamgear",
+    "category": "Control Surface",
+    "description": "Programmable controller with LCD keys, dials, and touch strip.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [
+      "Stream Deck"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "keys": 8,
+      "dials": 4
+    },
+    "usbDetect": [
+      "Stream Deck +",
+      "Stream Deck Plus"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "elgato-stream-deck-plus",
+    "manufacturer": "Elgato",
+    "displayName": "Stream Deck +",
+    "family": "Stream Deck",
+    "model": "+",
+    "subcategory": "Control Surface",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "keys": 8,
+      "dials": 4
+    },
+    "connections": [],
+    "compatibleWith": [
+      "Stream Deck"
+    ],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  },
+  {
+    "id": "elgato-stream-deck-mk2",
+    "brand": "Elgato",
+    "name": "Stream Deck MK.2",
+    "equipmentType": "streamgear",
+    "category": "Control Surface",
+    "description": "Programmable fifteen-key control surface.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [
+      "Stream Deck"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "keys": 15
+    },
+    "usbDetect": [
+      "Stream Deck MK.2",
+      "Stream Deck"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "elgato-stream-deck-mk2",
+    "manufacturer": "Elgato",
+    "displayName": "Stream Deck MK.2",
+    "family": "Stream Deck",
+    "model": "MK.2",
+    "subcategory": "Control Surface",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "keys": 15
+    },
+    "connections": [],
+    "compatibleWith": [
+      "Stream Deck"
+    ],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  }
+]

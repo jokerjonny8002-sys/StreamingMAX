@@ -1,0 +1,251 @@
+[
+  {
+    "id": "audio-technica-at2020",
+    "brand": "Audio-Technica",
+    "name": "AT2020",
+    "equipmentType": "microphones",
+    "category": "Studio Microphone",
+    "description": "Cardioid condenser microphone.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "type": "Condenser",
+      "connection": "XLR"
+    },
+    "usbDetect": [
+      "Audio-Technica AT2020",
+      "AT2020"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "audio-technica-at2020",
+    "manufacturer": "Audio-Technica",
+    "displayName": "AT2020",
+    "family": "AT",
+    "model": "2020",
+    "subcategory": "Studio Microphone",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "type": "Condenser",
+      "connection": "XLR"
+    },
+    "connections": [],
+    "compatibleWith": [],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  },
+  {
+    "id": "elgato-wave-3",
+    "brand": "Elgato",
+    "name": "Wave:3",
+    "equipmentType": "microphones",
+    "category": "USB Microphone",
+    "description": "USB condenser microphone for streaming.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [
+      "Wave Link",
+      "OBS Studio"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "type": "Condenser",
+      "connection": "USB"
+    },
+    "usbDetect": [
+      "Elgato Wave:3",
+      "Wave:3"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "elgato-wave-3",
+    "manufacturer": "Elgato",
+    "displayName": "Wave:3",
+    "family": "Wave",
+    "model": "3",
+    "subcategory": "USB Microphone",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "type": "Condenser",
+      "connection": "USB"
+    },
+    "connections": [],
+    "compatibleWith": [
+      "Wave Link",
+      "OBS Studio"
+    ],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  },
+  {
+    "id": "rode-podmic",
+    "brand": "RØDE",
+    "name": "PodMic",
+    "equipmentType": "microphones",
+    "category": "Broadcast Microphone",
+    "description": "Dynamic broadcast microphone.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "type": "Dynamic",
+      "connection": "XLR"
+    },
+    "usbDetect": [
+      "Rode PodMic",
+      "PodMic"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "rode-podmic",
+    "manufacturer": "RØDE",
+    "displayName": "PodMic",
+    "family": "PodMic",
+    "model": "",
+    "subcategory": "Broadcast Microphone",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "type": "Dynamic",
+      "connection": "XLR"
+    },
+    "connections": [],
+    "compatibleWith": [],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  },
+  {
+    "id": "shure-mv7",
+    "brand": "Shure",
+    "name": "MV7",
+    "equipmentType": "microphones",
+    "category": "Broadcast Microphone",
+    "description": "Dynamic USB and XLR microphone.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [
+      "Shure MOTIV"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "type": "Dynamic",
+      "connection": "USB/XLR"
+    },
+    "usbDetect": [
+      "Shure MV7",
+      "MV7"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "shure-mv7",
+    "manufacturer": "Shure",
+    "displayName": "MV7",
+    "family": "MV",
+    "model": "7",
+    "subcategory": "Broadcast Microphone",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "type": "Dynamic",
+      "connection": "USB/XLR"
+    },
+    "connections": [],
+    "compatibleWith": [
+      "Shure MOTIV"
+    ],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  },
+  {
+    "id": "shure-sm7b",
+    "brand": "Shure",
+    "name": "SM7B",
+    "equipmentType": "microphones",
+    "category": "Broadcast Microphone",
+    "description": "Dynamic broadcast microphone.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "type": "Dynamic",
+      "connection": "XLR"
+    },
+    "usbDetect": [
+      "Shure SM7B"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "shure-sm7b",
+    "manufacturer": "Shure",
+    "displayName": "SM7B",
+    "family": "SM",
+    "model": "7B",
+    "subcategory": "Broadcast Microphone",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "type": "Dynamic",
+      "connection": "XLR"
+    },
+    "connections": [],
+    "compatibleWith": [],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  }
+]

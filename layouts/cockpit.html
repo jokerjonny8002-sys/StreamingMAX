@@ -27,6 +27,37 @@
         </div>
       </div>
 
+    <div id="brandSplash" class="brand-splash">
+  <div class="brand-splash-grid"></div>
+  <div class="brand-splash-scanline"></div>
+  <div class="brand-splash-glow"></div>
+
+  <div class="brand-splash-content">
+    <img
+      src="../assets/branding/streamingmax-splash.webp"
+      alt="StreamingMAX Mission Control"
+    />
+
+    <div class="brand-boot-panel">
+      <div class="brand-boot-heading">
+        <span>ATLAS SYSTEM BOOT</span>
+        <strong id="brandBootPercent">0%</strong>
+      </div>
+
+      <div class="brand-boot-track">
+        <div id="brandBootBar" class="brand-boot-bar"></div>
+      </div>
+
+      <div class="brand-boot-status">
+        <span class="brand-boot-dot"></span>
+        <span id="brandBootText">INITIALIZING ATLAS CORE...</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
       <div id="profileSetup" class="profile-setup hidden">
   <div class="profile-setup-card">
     <h2>WELCOME TO STREAMINGMAX</h2>
@@ -53,6 +84,23 @@
         <option value="realName">Real Name</option>
         <option value="djName">DJ Name</option>
         <option value="nickname">Nickname</option>
+      </select>
+    </label>
+
+    <label>
+      ATLAS Humor
+      <select id="profileAtlasHumor">
+        <option value="professional">
+          Professional
+        </option>
+
+        <option value="friendly" selected>
+          Friendly
+        </option>
+
+        <option value="full">
+          Full ATLAS
+        </option>
       </select>
     </label>
 
@@ -367,54 +415,58 @@
         </button>
       </section>
 
+      <!-- STUDIO BUILDER -->
+      <section class="studio-builder-card panel">
+        <div class="panel-heading">
+          <div>
+            <h2>STUDIO BUILDER</h2>
+            <p>Search and add equipment to your studio profile</p>
+          </div>
+
+          <span id="equipmentCount" class="status-pill">
+            0 DEVICES
+          </span>
+        </div>
+
+        <div class="equipment-search-row">
+          <input
+            id="equipmentSearchInput"
+            type="search"
+            placeholder="Search controllers, cameras, interfaces..."
+            autocomplete="off"
+          />
+
+          <button id="equipmentSearchBtn" type="button">
+            SEARCH
+          </button>
+        </div>
+
+        <div id="equipmentResults" class="equipment-results">
+          <p class="equipment-empty">
+            Search for gear such as RX3, FLX10, CDJ-3000, or Pioneer.
+          </p>
+        </div>
+
+        <div class="my-studio-heading">
+          <div>
+            <h3>MY STUDIO</h3>
+            <p>Equipment currently attached to this profile</p>
+          </div>
+
+          <strong id="myStudioCount">0 ITEMS</strong>
+        </div>
+
+        <div id="myStudioList" class="my-studio-list">
+          <p class="equipment-empty">
+            No equipment added yet.
+          </p>
+        </div>
+      </section>
+
       <!-- TIMELINE -->
       <section class="timeline-card panel">
         <div class="panel-heading">
           <div>
-            <section class="studio-builder-card panel">
-  <div class="panel-heading">
-    <div>
-      <h2>STUDIO BUILDER</h2>
-      <p>Search and add equipment to your studio profile</p>
-    </div>
-
-    <span id="equipmentCount" class="status-pill">0 DEVICES</span>
-  </div>
-
-  <div class="equipment-search-row">
-    <input
-      id="equipmentSearchInput"
-      type="search"
-      placeholder="Search controllers, cameras, interfaces..."
-      autocomplete="off"
-    />
-
-    <button id="equipmentSearchBtn" type="button">
-      SEARCH
-    </button>
-  </div>
-
-  <div id="equipmentResults" class="equipment-results">
-    <p class="equipment-empty">
-      Search for gear such as RX3, FLX10, CDJ-3000, or Pioneer.
-    </p>
-  </div>
-
-  <div class="my-studio-heading">
-    <div>
-      <h3>MY STUDIO</h3>
-      <p>Equipment currently attached to this profile</p>
-    </div>
-
-    <strong id="myStudioCount">0 ITEMS</strong>
-  </div>
-
-  <div id="myStudioList" class="my-studio-list">
-    <p class="equipment-empty">
-      No equipment added yet.
-    </p>
-  </div>
-</section>
             <h2>MISSION TIMELINE</h2>
             <p>Recent cockpit activity</p>
           </div>

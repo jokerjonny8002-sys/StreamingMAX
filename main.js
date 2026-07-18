@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require("electron");
+const { app, BrowserWindow, ipcMain, globalShortcut } = require("electron");
 app.disableHardwareAcceleration();
 const { buildPreflight } = require("./modules/preflightEngine");
 const path = require("path");
@@ -11,19 +11,64 @@ const os = require("os");
 const si = require("systeminformation");
 const { exec } = require("child_process");
 const { calculatePerformance } = require("./modules/performanceEngine");
-const { getTopMemoryProcesses } = require("./modules/processMonitor");
+const {
+  getTopMemoryProcesses,
+  endProcess
+} = require("./modules/processMonitor");
 const { detectStudio } = require("./modules/studioDetector");
 const { buildStudioReady } = require("./modules/studioReady");
 const { buildAtlasMessage } = require("./modules/atlasEngine");
+const {
+  collectMissionState
+} = require("./modules/atlas/collectors");
+
+const {
+  getRecommendation
+} = require("./modules/atlas/recommendationEngine");
+
+const {
+  getAtlasChatResponse
+} = require("./modules/atlas/chatEngine");
 const {
   getProfile,
   saveProfile,
   getDisplayName
 } = require("./modules/profileManager");
 
+const layoutManager = require("./modules/layoutManager");
 const atlasLibrary = require("./modules/atlasLibrary");
 let mainWindow;
 let caffeinateProcess = null;
+
+
+function registerDeveloperShortcuts() {
+  const switchLayout = layoutName => {
+    layoutManager.saveCurrentLayout(layoutName);
+
+    if (mainWindow && !mainWindow.isDestroyed()) {
+      mainWindow.loadFile(layoutManager.getLayoutFile());
+    }
+  };
+
+  globalShortcut.register(
+    "CommandOrControl+Shift+1",
+    () => switchLayout("classic")
+  );
+
+  globalShortcut.register(
+    "CommandOrControl+Shift+2",
+    () => switchLayout("mission")
+  );
+
+  globalShortcut.register(
+    "CommandOrControl+Shift+R",
+    () => {
+      if (mainWindow && !mainWindow.isDestroyed()) {
+        mainWindow.reload();
+      }
+    }
+  );
+}
 
 function createWindow() {
   mainWindow = new BrowserWindow({
@@ -41,12 +86,13 @@ function createWindow() {
     }
   });
 
-  mainWindow.loadFile("layouts/cockpit.html");
+  mainWindow.loadFile(layoutManager.getLayoutFile());
 
   mainWindow.once("ready-to-show", () => {
     mainWindow.show();
     mainWindow.webContents.openDevTools({ mode: "detach" });
   });
+
 }
 
 function runCommand(command) {
@@ -63,8 +109,25 @@ function runCommand(command) {
 }
 
 async function isProcessRunning(name) {
-  const result = await runCommand(`pgrep -ifl "${name}"`);
-  return result.stdout.trim().length > 0;
+  const result =
+    await runCommand("ps -axo comm=");
+
+  const requestedNames = String(name || "")
+    .split("|")
+    .map(value => value.trim().toLowerCase())
+    .filter(Boolean);
+
+  const runningNames = result.stdout
+    .split("\n")
+    .map(line => line.trim())
+    .filter(Boolean)
+    .map(commandPath =>
+      path.basename(commandPath).toLowerCase()
+    );
+
+  return runningNames.some(runningName =>
+    requestedNames.includes(runningName)
+  );
 }
 
 function startCaffeinate() {
@@ -237,6 +300,7 @@ async function preflightMode() {
 const { calculateReadiness } = require("./modules/readinessEngine");
 
 app.whenReady().then(() => {
+  registerDeveloperShortcuts();
   createWindow();
   app.on("activate", () => {
 
@@ -285,8 +349,8 @@ if (!appConfig) {
 
 const command =
   appConfig.type === "path"
-    ? `open "${appConfig.value}"`
-    : `open -a "${appConfig.value}"`;
+    ? `open -g "${appConfig.value}"`
+    : `open -g -a "${appConfig.value}"`;
 
 const result = await runCommand(command);
 
@@ -322,6 +386,10 @@ ipcMain.handle("get-sleep-guard", async () => {
 ipcMain.handle("get-top-processes", async () => {
   return getTopMemoryProcesses();
 });
+
+ipcMain.handle("end-process", async (_event, pid) => {
+  return endProcess(pid);
+});
 ipcMain.handle("detect-studio", async () => {
   return detectStudio();
 });
@@ -354,6 +422,76 @@ ipcMain.handle("get-readiness", async () => {
   const studio = await detectStudio();
 
   return calculateReadiness(stats, studio);
+});
+
+ipcMain.handle("atlas-chat", async (_event, message) => {
+  const stats = await getLiveStats();
+  const studio = await detectStudio();
+
+  const readiness = calculateReadiness(
+    stats,
+    studio
+  );
+
+  const state = collectMissionState({
+    stats,
+    studio,
+    readiness
+  });
+
+  const recommendation =
+    getRecommendation(state);
+
+  const profile = getProfile();
+
+  const equipmentIds =
+    Array.isArray(profile.studioEquipment)
+      ? profile.studioEquipment
+      : [];
+
+  const equipment = equipmentIds
+    .map(id => getEquipmentById(id))
+    .filter(Boolean);
+
+  return getAtlasChatResponse({
+    message,
+    state,
+    recommendation,
+    profile: {
+      ...profile,
+      displayName: getDisplayName(profile)
+    },
+    equipment
+  });
+});
+
+ipcMain.handle("get-mission-state", async () => {
+  const stats = await getLiveStats();
+  const studio = await detectStudio();
+  const readiness = calculateReadiness(
+    stats,
+    studio
+  );
+
+  const state = collectMissionState({
+    stats,
+    studio,
+    readiness
+  });
+
+  const recommendation =
+    getRecommendation(state);
+
+  const profile = getProfile();
+
+  return {
+    state,
+    recommendation,
+    profile: {
+      ...profile,
+      displayName: getDisplayName(profile)
+    }
+  };
 });
 
 ipcMain.handle("run-speed-test", async () => {
@@ -416,3 +554,8 @@ ipcMain.handle(
     return atlasLibrary.findByManufacturer(manufacturer);
   }
 );
+
+
+app.on("will-quit", () => {
+  globalShortcut.unregisterAll();
+});

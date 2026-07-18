@@ -1,0 +1,54 @@
+[
+  {
+    "id": "sony-a6400",
+    "brand": "Sony",
+    "name": "a6400",
+    "equipmentType": "cameras",
+    "category": "Mirrorless Camera",
+    "description": "Mirrorless interchangeable-lens camera commonly used for streaming.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [
+      "OBS Studio",
+      "Imaging Edge Webcam"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "resolution": "4K capable"
+    },
+    "usbDetect": [
+      "Sony a6400",
+      "ILCE-6400"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "sony-a6400",
+    "manufacturer": "Sony",
+    "displayName": "a6400",
+    "family": "Alpha",
+    "model": "a6400",
+    "subcategory": "Mirrorless Camera",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "resolution": "4K capable"
+    },
+    "connections": [],
+    "compatibleWith": [
+      "OBS Studio",
+      "Imaging Edge Webcam"
+    ],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  }
+]

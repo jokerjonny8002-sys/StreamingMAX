@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>StreamingMAX Cockpit v2</title>
+
+    <link rel="stylesheet" href="../themes/cockpit-v2.css">
+</head>
+
+<body>
+
+<div class="cockpit">
+
+<header class="command-bar">
+  <div class="atlas-identity">
+    <div class="atlas-orb" aria-hidden="true">
+      <div class="atlas-orb-core"></div>
+    </div>
+
+    <div>
+      <div class="atlas-title-row">
+        <h1>ATLAS</h1>
+        <span class="atlas-online">
+          <span class="status-dot"></span>
+          ONLINE
+        </span>
+      </div>
+
+      <p class="atlas-greeting">
+        Good evening, Commander.
+      </p>
+    </div>
+  </div>
+
+  <div class="mission-summary">
+    <div class="mission-label">
+      <small>CURRENT MISSION</small>
+      <strong>STREAMING</strong>
+    </div>
+
+    <div class="mission-readiness">
+      <small>MISSION READINESS</small>
+
+      <div class="readiness-value">
+        <strong>98</strong>
+        <span>/100</span>
+      </div>
+
+      <span class="ready-badge">MISSION READY</span>
+    </div>
+  </div>
+
+  <div class="command-meta">
+    <div>
+      <small>LOCAL TIME</small>
+      <strong id="v2Clock">11:59 PM</strong>
+    </div>
+
+    <div>
+      <small>SESSION</small>
+      <strong id="v2Session">00:00:00</strong>
+    </div>
+
+    <span class="developer-badge">
+      DEV
+    </span>
+  </div>
+
+  <div class="system-strip">
+  <span id="v2Rx3Chip" class="system-chip scanning">
+    RX3
+  </span>
+
+  <span id="v2ObsChip" class="system-chip scanning">
+    OBS
+  </span>
+
+  <span id="v2CameraChip" class="system-chip scanning">
+    SONY A6400
+  </span>
+
+  <span id="v2ScarlettChip" class="system-chip scanning">
+    SCARLETT
+  </span>
+
+  <span id="v2NetworkChip" class="system-chip scanning">
+    NETWORK
+  </span>
+
+  <span id="v2SleepChip" class="system-chip scanning">
+    SLEEP GUARD
+  </span>
+</div>
+
+</header>
+
+<section class="atlas briefing-card">
+  <div class="briefing-heading">
+    <div>
+      <small>ATLAS INTELLIGENCE</small>
+      <h2>MISSION BRIEFING</h2>
+    </div>
+
+    <span id="v2BriefingPriority" class="briefing-priority">
+      RECOMMENDATION
+    </span>
+  </div>
+
+  <div class="briefing-main">
+    <div class="briefing-orb" aria-hidden="true">
+      <div class="briefing-orb-core"></div>
+    </div>
+
+    <div class="briefing-copy">
+      <h3 id="v2BriefingHeadline">
+        Your mission systems are being checked.
+      </h3>
+
+      <p id="v2BriefingMessage">
+        ATLAS is reviewing your studio and current system readiness.
+      </p>
+    </div>
+  </div>
+
+  <div class="briefing-footer">
+    <div class="briefing-reason">
+      <small>NEXT ACTION</small>
+      <strong id="v2BriefingAction">
+        Complete startup diagnostics
+      </strong>
+    </div>
+
+    <button id="v2PrepareMissionBtn" type="button">
+      PREPARE MISSION
+    </button>
+  </div>
+</section>
+
+<section class="performance">
+PERFORMANCE
+</section>
+
+<section class="systems">
+SYSTEMS
+</section>
+
+<section class="preflight">
+PREFLIGHT
+</section>
+
+<section class="studio">
+STUDIO BUILDER
+</section>
+
+<section class="timeline">
+TIMELINE
+</section>
+
+<section class="golive">
+GO LIVE
+</section>
+
+</div>
+
+<script src="../ui/cockpit-v2.js"></script>
+
+</body>
+
+</html>

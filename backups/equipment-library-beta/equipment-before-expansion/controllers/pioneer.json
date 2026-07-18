@@ -1,0 +1,476 @@
+[
+  {
+    "id": "alphatheta-pioneer-xdj-rx3",
+    "brand": "AlphaTheta / Pioneer DJ",
+    "name": "XDJ-RX3",
+    "equipmentType": "controllers",
+    "category": "all-in-one",
+    "description": "Two-channel all-in-one DJ system for rekordbox and Serato DJ Pro.",
+    "heroImage": "images/controllers/xdj-rx3.webp",
+    "gallery": [],
+    "software": [
+      "rekordbox",
+      "Serato DJ Pro"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "channels": 2,
+      "decks": 2,
+      "display": "10.1-inch touchscreen",
+      "usbPorts": 2
+    },
+    "usbDetect": [
+      "XDJ-RX3",
+      "Pioneer DJ XDJ-RX3"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "xdj-rx3",
+    "manufacturer": "AlphaTheta / Pioneer DJ",
+    "displayName": "XDJ-RX3",
+    "family": "XDJ",
+    "model": "RX3",
+    "subcategory": "Standalone DJ System",
+    "status": "Current",
+    "released": null,
+    "confidence": "official",
+    "image": "images/controllers/xdj-rx3.webp",
+    "specifications": {
+      "channels": 2,
+      "decks": 2,
+      "display": "10.1-inch touchscreen",
+      "usbPorts": 2
+    },
+    "connections": [],
+    "compatibleWith": [],
+    "manual": "",
+    "driver": ""
+  },
+  {
+    "id": "alphatheta-pioneer-xdj-xz",
+    "brand": "Pioneer DJ",
+    "name": "XDJ-XZ",
+    "equipmentType": "controllers",
+    "category": "all-in-one",
+    "description": "Four-channel professional all-in-one DJ system.",
+    "heroImage": "images/controllers/xdj-xz.webp",
+    "gallery": [],
+    "software": [
+      "rekordbox",
+      "Serato DJ Pro"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "channels": 4,
+      "decks": 4,
+      "display": "7-inch touchscreen",
+      "usbPorts": 3
+    },
+    "usbDetect": [
+      "XDJ-XZ",
+      "Pioneer DJ XDJ-XZ"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "xdj-xz",
+    "manufacturer": "Pioneer DJ",
+    "displayName": "XDJ-XZ",
+    "family": "XDJ",
+    "model": "XZ",
+    "subcategory": "Standalone DJ System",
+    "status": "Current",
+    "released": null,
+    "confidence": "official",
+    "image": "images/controllers/xdj-xz.webp",
+    "specifications": {
+      "channels": 4,
+      "decks": 4,
+      "display": "7-inch touchscreen",
+      "usbPorts": 3
+    },
+    "connections": [],
+    "compatibleWith": [],
+    "manual": "",
+    "driver": ""
+  },
+  {
+    "id": "alphatheta-pioneer-opus-quad",
+    "brand": "AlphaTheta",
+    "name": "OPUS-QUAD",
+    "equipmentType": "controllers",
+    "category": "all-in-one",
+    "description": "Four-deck professional all-in-one DJ system.",
+    "heroImage": "images/controllers/opus-quad.webp",
+    "gallery": [],
+    "software": [
+      "rekordbox",
+      "Serato DJ Pro"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "channels": 4,
+      "decks": 4,
+      "display": "10.1-inch touchscreen",
+      "usbPorts": 3
+    },
+    "usbDetect": [
+      "OPUS-QUAD",
+      "AlphaTheta OPUS-QUAD"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "opus-quad",
+    "manufacturer": "AlphaTheta",
+    "displayName": "OPUS-QUAD",
+    "family": "OPUS",
+    "model": "QUAD",
+    "subcategory": "Standalone DJ System",
+    "status": "Current",
+    "released": null,
+    "confidence": "official",
+    "image": "images/controllers/opus-quad.webp",
+    "specifications": {
+      "channels": 4,
+      "decks": 4,
+      "display": "10.1-inch touchscreen",
+      "usbPorts": 3
+    },
+    "connections": [],
+    "compatibleWith": [],
+    "manual": "",
+    "driver": ""
+  },
+  {
+    "id": "alphatheta-pioneer-ddj-flx4",
+    "brand": "AlphaTheta / Pioneer DJ",
+    "name": "DDJ-FLX4",
+    "equipmentType": "controllers",
+    "category": "controller",
+    "description": "Compact two-channel controller for rekordbox and Serato DJ Lite.",
+    "heroImage": "images/controllers/ddj-flx4.webp",
+    "gallery": [],
+    "software": [
+      "rekordbox",
+      "Serato DJ Lite"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "channels": 2,
+      "decks": 2,
+      "display": "None",
+      "usbPorts": 1
+    },
+    "usbDetect": [
+      "DDJ-FLX4",
+      "Pioneer DJ DDJ-FLX4"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "ddj-flx4",
+    "manufacturer": "AlphaTheta / Pioneer DJ",
+    "displayName": "DDJ-FLX4",
+    "family": "DDJ",
+    "model": "FLX4",
+    "subcategory": "DJ Controller",
+    "status": "Current",
+    "released": null,
+    "confidence": "official",
+    "image": "images/controllers/ddj-flx4.webp",
+    "specifications": {
+      "channels": 2,
+      "decks": 2,
+      "display": "None",
+      "usbPorts": 1
+    },
+    "connections": [],
+    "compatibleWith": [],
+    "manual": "",
+    "driver": ""
+  },
+  {
+    "id": "alphatheta-pioneer-ddj-flx6",
+    "brand": "Pioneer DJ",
+    "name": "DDJ-FLX6",
+    "equipmentType": "controllers",
+    "category": "controller",
+    "description": "Four-channel performance controller for rekordbox and Serato DJ Pro.",
+    "heroImage": "images/controllers/ddj-flx6.webp",
+    "gallery": [],
+    "software": [
+      "rekordbox",
+      "Serato DJ Pro"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "channels": 4,
+      "decks": 4,
+      "display": "None",
+      "usbPorts": 1
+    },
+    "usbDetect": [
+      "DDJ-FLX6",
+      "Pioneer DJ DDJ-FLX6"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "ddj-flx6",
+    "manufacturer": "Pioneer DJ",
+    "displayName": "DDJ-FLX6",
+    "family": "DDJ",
+    "model": "FLX6",
+    "subcategory": "DJ Controller",
+    "status": "Current",
+    "released": null,
+    "confidence": "official",
+    "image": "images/controllers/ddj-flx6.webp",
+    "specifications": {
+      "channels": 4,
+      "decks": 4,
+      "display": "None",
+      "usbPorts": 1
+    },
+    "connections": [],
+    "compatibleWith": [],
+    "manual": "",
+    "driver": ""
+  },
+  {
+    "id": "alphatheta-pioneer-ddj-flx10",
+    "brand": "AlphaTheta / Pioneer DJ",
+    "name": "DDJ-FLX10",
+    "equipmentType": "controllers",
+    "category": "controller",
+    "description": "Four-channel professional controller with stem controls.",
+    "heroImage": "images/controllers/ddj-flx10.webp",
+    "gallery": [],
+    "software": [
+      "rekordbox",
+      "Serato DJ Pro"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "channels": 4,
+      "decks": 4,
+      "display": "On-jog displays",
+      "usbPorts": 2
+    },
+    "usbDetect": [
+      "DDJ-FLX10",
+      "Pioneer DJ DDJ-FLX10"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "ddj-flx10",
+    "manufacturer": "AlphaTheta / Pioneer DJ",
+    "displayName": "DDJ-FLX10",
+    "family": "DDJ",
+    "model": "FLX10",
+    "subcategory": "DJ Controller",
+    "status": "Current",
+    "released": null,
+    "confidence": "official",
+    "image": "images/controllers/ddj-flx10.webp",
+    "specifications": {
+      "channels": 4,
+      "decks": 4,
+      "display": "On-jog displays",
+      "usbPorts": 2
+    },
+    "connections": [],
+    "compatibleWith": [],
+    "manual": "",
+    "driver": ""
+  },
+  {
+    "id": "alphatheta-pioneer-ddj-1000",
+    "brand": "Pioneer DJ",
+    "name": "DDJ-1000",
+    "equipmentType": "controllers",
+    "category": "controller",
+    "description": "Four-channel rekordbox controller with full-size jog wheels.",
+    "heroImage": "images/controllers/ddj-1000.webp",
+    "gallery": [],
+    "software": [
+      "rekordbox"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "channels": 4,
+      "decks": 4,
+      "display": "On-jog displays",
+      "usbPorts": 2
+    },
+    "usbDetect": [
+      "DDJ-1000",
+      "Pioneer DJ DDJ-1000"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "ddj-1000",
+    "manufacturer": "Pioneer DJ",
+    "displayName": "DDJ-1000",
+    "family": "DDJ",
+    "model": "1000",
+    "subcategory": "DJ Controller",
+    "status": "Current",
+    "released": null,
+    "confidence": "official",
+    "image": "images/controllers/ddj-1000.webp",
+    "specifications": {
+      "channels": 4,
+      "decks": 4,
+      "display": "On-jog displays",
+      "usbPorts": 2
+    },
+    "connections": [],
+    "compatibleWith": [],
+    "manual": "",
+    "driver": ""
+  },
+  {
+    "id": "alphatheta-pioneer-ddj-rev7",
+    "brand": "Pioneer DJ",
+    "name": "DDJ-REV7",
+    "equipmentType": "controllers",
+    "category": "controller",
+    "description": "Two-channel battle-style controller with motorized platters.",
+    "heroImage": "images/controllers/ddj-rev7.webp",
+    "gallery": [],
+    "software": [
+      "Serato DJ Pro"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "channels": 2,
+      "decks": 2,
+      "display": "On-jog displays",
+      "usbPorts": 2
+    },
+    "usbDetect": [
+      "DDJ-REV7",
+      "Pioneer DJ DDJ-REV7"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "ddj-rev7",
+    "manufacturer": "Pioneer DJ",
+    "displayName": "DDJ-REV7",
+    "family": "DDJ",
+    "model": "REV7",
+    "subcategory": "DJ Controller",
+    "status": "Current",
+    "released": null,
+    "confidence": "official",
+    "image": "images/controllers/ddj-rev7.webp",
+    "specifications": {
+      "channels": 2,
+      "decks": 2,
+      "display": "On-jog displays",
+      "usbPorts": 2
+    },
+    "connections": [],
+    "compatibleWith": [],
+    "manual": "",
+    "driver": ""
+  },
+  {
+    "id": "alphatheta-pioneer-cdj-3000",
+    "brand": "Pioneer DJ",
+    "name": "CDJ-3000",
+    "equipmentType": "controllers",
+    "category": "media-player",
+    "description": "Professional flagship DJ media player.",
+    "heroImage": "images/controllers/cdj-3000.webp",
+    "gallery": [],
+    "software": [
+      "rekordbox"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "channels": 1,
+      "decks": 1,
+      "display": "9-inch touchscreen",
+      "usbPorts": 2
+    },
+    "usbDetect": [
+      "CDJ-3000",
+      "Pioneer DJ CDJ-3000"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "cdj-3000",
+    "manufacturer": "Pioneer DJ",
+    "displayName": "CDJ-3000",
+    "family": "CDJ",
+    "model": "3000",
+    "subcategory": "DJ Media Player",
+    "status": "Current",
+    "released": null,
+    "confidence": "official",
+    "image": "images/controllers/cdj-3000.webp",
+    "specifications": {
+      "channels": 1,
+      "decks": 1,
+      "display": "9-inch touchscreen",
+      "usbPorts": 2
+    },
+    "connections": [],
+    "compatibleWith": [],
+    "manual": "",
+    "driver": ""
+  }
+]

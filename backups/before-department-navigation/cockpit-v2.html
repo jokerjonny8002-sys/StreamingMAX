@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>StreamingMAX Cockpit v2</title>
+
+    <link rel="stylesheet" href="../themes/cockpit-v2.css">
+</head>
+
+<body>
+
+<div class="cockpit">
+
+<header class="command-bar">
+  <div class="atlas-identity">
+    <div class="atlas-orb" aria-hidden="true">
+      <div class="atlas-orb-core"></div>
+    </div>
+
+    <div>
+      <div class="atlas-title-row">
+        <h1>ATLAS</h1>
+        <span class="atlas-online">
+          <span class="status-dot"></span>
+          ONLINE
+        </span>
+      </div>
+
+      <p class="atlas-greeting">
+        Good evening, Commander.
+      </p>
+    </div>
+  </div>
+
+  <div class="mission-summary">
+    <div class="mission-label">
+      <small>CURRENT MISSION</small>
+      <strong>STREAMING</strong>
+    </div>
+
+    <div class="mission-readiness">
+      <small>MISSION READINESS</small>
+
+      <div class="readiness-value">
+        <strong>98</strong>
+        <span>/100</span>
+      </div>
+
+      <span class="ready-badge">MISSION READY</span>
+    </div>
+  </div>
+
+  <div class="command-meta">
+    <div>
+      <small>LOCAL TIME</small>
+      <strong id="v2Clock">11:59 PM</strong>
+    </div>
+
+    <div>
+      <small>SESSION</small>
+      <strong id="v2Session">00:00:00</strong>
+    </div>
+
+    <span class="developer-badge">
+      DEV
+    </span>
+  </div>
+
+  <div class="system-strip">
+  <span id="v2Rx3Chip" class="system-chip scanning">
+    RX3
+  </span>
+
+  <span id="v2ObsChip" class="system-chip scanning">
+    OBS
+  </span>
+
+  <span id="v2CameraChip" class="system-chip scanning">
+    SONY A6400
+  </span>
+
+  <span id="v2ScarlettChip" class="system-chip scanning">
+    SCARLETT
+  </span>
+
+  <span id="v2NetworkChip" class="system-chip scanning">
+    NETWORK
+  </span>
+
+  <span id="v2SleepChip" class="system-chip scanning">
+    SLEEP GUARD
+  </span>
+</div>
+
+</header>
+
+<section class="atlas briefing-card">
+  <div class="briefing-heading">
+    <div>
+      <small>ATLAS INTELLIGENCE</small>
+      <h2>MISSION BRIEFING</h2>
+    </div>
+
+    <span id="v2BriefingPriority" class="briefing-priority">
+      RECOMMENDATION
+    </span>
+  </div>
+
+  <div class="briefing-main">
+    <div class="briefing-orb" aria-hidden="true">
+      <div class="briefing-orb-core"></div>
+    </div>
+
+    <div class="briefing-copy">
+      <h3 id="v2BriefingHeadline">
+        Your mission systems are being checked.
+      </h3>
+
+      <p id="v2BriefingMessage">
+        ATLAS is reviewing your studio and current system readiness.
+      </p>
+    </div>
+  </div>
+
+  <div class="briefing-footer">
+    <div class="briefing-reason">
+      <small>NEXT ACTION</small>
+      <strong id="v2BriefingAction">
+        Complete startup diagnostics
+      </strong>
+    </div>
+
+    <button id="v2PrepareMissionBtn" type="button">
+      PREPARE MISSION
+    </button>
+  </div>
+</section>
+
+<section class="performance mission-panel" data-panel="performance">
+  <div class="panel-header">
+    <div>
+      <small>SYSTEM HEALTH</small>
+      <h2>PERFORMANCE</h2>
+    </div>
+
+    <span class="panel-status ready">HEALTHY</span>
+  </div>
+
+  <div class="panel-tabs" role="tablist">
+    <button class="panel-tab active" data-panel-tab="overview">
+      OVERVIEW
+    </button>
+
+    <button class="panel-tab" data-panel-tab="cpu">
+      CPU
+    </button>
+
+    <button class="panel-tab" data-panel-tab="memory">
+      MEMORY
+    </button>
+
+    <button class="panel-tab" data-panel-tab="storage">
+      STORAGE
+    </button>
+  </div>
+
+  <div class="panel-content">
+    <div class="panel-view active" data-panel-view="overview">
+      <div class="overview-metric">
+        <small>MISSION IMPACT</small>
+        <strong>EXCELLENT</strong>
+        <p>Your computer is handling the current workload.</p>
+      </div>
+    </div>
+
+    <div class="panel-view" data-panel-view="cpu">
+      <p>Detailed CPU information will appear here.</p>
+    </div>
+
+    <div class="panel-view" data-panel-view="memory">
+      <p>Detailed memory information will appear here.</p>
+    </div>
+
+    <div class="panel-view" data-panel-view="storage">
+      <p>Storage health and available space will appear here.</p>
+    </div>
+  </div>
+</section>
+
+<section class="systems mission-panel" data-panel="network">
+  <div class="panel-header">
+    <div>
+      <small>CONNECTION HEALTH</small>
+      <h2>NETWORK</h2>
+    </div>
+
+    <span class="panel-status checking">CHECKING</span>
+  </div>
+
+  <div class="panel-tabs" role="tablist">
+    <button class="panel-tab active" data-panel-tab="overview">
+      OVERVIEW
+    </button>
+
+    <button class="panel-tab" data-panel-tab="speed">
+      SPEED TEST
+    </button>
+
+    <button class="panel-tab" data-panel-tab="details">
+      DETAILS
+    </button>
+
+    <button class="panel-tab" data-panel-tab="logs">
+      LOGS
+    </button>
+  </div>
+
+  <div class="panel-content">
+    <div class="panel-view active" data-panel-view="overview">
+      <div class="overview-metric">
+        <small>STREAMING CONNECTION</small>
+        <strong>CHECKING...</strong>
+        <p>ATLAS is evaluating internet readiness.</p>
+      </div>
+    </div>
+
+    <div class="panel-view" data-panel-view="speed">
+      <button class="panel-action" type="button">
+        RUN NETWORK SPEED TEST
+      </button>
+
+      <div class="network-results">
+        <span>Download <strong>-- Mbps</strong></span>
+        <span>Upload <strong>-- Mbps</strong></span>
+        <span>Latency <strong>-- ms</strong></span>
+      </div>
+    </div>
+
+    <div class="panel-view" data-panel-view="details">
+      <dl class="detail-list">
+        <div><dt>IPv4</dt><dd>Checking...</dd></div>
+        <div><dt>Gateway</dt><dd>Checking...</dd></div>
+        <div><dt>Adapter</dt><dd>Checking...</dd></div>
+        <div><dt>DNS</dt><dd>Checking...</dd></div>
+      </dl>
+    </div>
+
+    <div class="panel-view" data-panel-view="logs">
+      <p>No network events recorded yet.</p>
+    </div>
+  </div>
+</section>
+
+<section class="preflight mission-panel" data-panel="preflight">
+  <div class="panel-header">
+    <div>
+      <small>MISSION READINESS</small>
+      <h2>PRE-FLIGHT</h2>
+    </div>
+
+    <span class="panel-status checking">STANDBY</span>
+  </div>
+
+  <div class="panel-tabs" role="tablist">
+    <button class="panel-tab active" data-panel-tab="checks">
+      CHECKS
+    </button>
+
+    <button class="panel-tab" data-panel-tab="issues">
+      ISSUES
+    </button>
+  </div>
+
+  <div class="panel-content">
+    <div class="panel-view active" data-panel-view="checks">
+      <div class="compact-check-list">
+        <div><span></span>CPU Health <strong>WAITING</strong></div>
+        <div><span></span>Memory <strong>WAITING</strong></div>
+        <div><span></span>OBS Studio <strong>WAITING</strong></div>
+        <div><span></span>Internet <strong>WAITING</strong></div>
+      </div>
+    </div>
+
+    <div class="panel-view" data-panel-view="issues">
+      <p>No mission issues detected yet.</p>
+    </div>
+  </div>
+
+  <div class="panel-footer">
+    <button class="panel-action" type="button">
+      RUN PRE-FLIGHT
+    </button>
+  </div>
+</section>
+
+<section class="studio mission-panel" data-panel="studio">
+  <div class="panel-header">
+    <div>
+      <small>YOUR WORKSPACE</small>
+      <h2>MY STUDIO</h2>
+    </div>
+
+    <span class="panel-status neutral">0 DEVICES</span>
+  </div>
+
+  <div class="panel-tabs" role="tablist">
+    <button class="panel-tab active" data-panel-tab="overview">
+      OVERVIEW
+    </button>
+
+    <button class="panel-tab" data-panel-tab="equipment">
+      EQUIPMENT
+    </button>
+
+    <button class="panel-tab" data-panel-tab="firmware">
+      FIRMWARE
+    </button>
+
+    <button class="panel-tab" data-panel-tab="audio">
+      AUDIO
+    </button>
+  </div>
+
+  <div class="panel-content">
+    <div class="panel-view active" data-panel-view="overview">
+      <div class="overview-metric">
+        <small>STUDIO STATUS</small>
+        <strong>NOT CONFIGURED</strong>
+        <p>Add equipment to build your digital studio.</p>
+      </div>
+    </div>
+
+    <div class="panel-view" data-panel-view="equipment">
+      <div class="panel-empty-state">
+        <p>No equipment has been added yet.</p>
+        <button class="panel-action" type="button">
+          ADD EQUIPMENT
+        </button>
+      </div>
+    </div>
+
+    <div class="panel-view" data-panel-view="firmware">
+      <p>Firmware status will appear after equipment is added.</p>
+    </div>
+
+    <div class="panel-view" data-panel-view="audio">
+      <p>Audio routing and sample-rate information will appear here.</p>
+    </div>
+  </div>
+</section>
+
+<section class="timeline mission-panel" data-panel="timeline">
+  <div class="panel-header">
+    <div>
+      <small>RECENT ACTIVITY</small>
+      <h2>MISSION TIMELINE</h2>
+    </div>
+
+    <button class="panel-menu-button" type="button" aria-label="Timeline menu">
+      ⋮
+    </button>
+  </div>
+
+  <div class="panel-tabs" role="tablist">
+    <button class="panel-tab active" data-panel-tab="all">
+      ALL
+    </button>
+
+    <button class="panel-tab" data-panel-tab="alerts">
+      ALERTS
+    </button>
+
+    <button class="panel-tab" data-panel-tab="atlas">
+      ATLAS
+    </button>
+  </div>
+
+  <div class="panel-content">
+    <div class="panel-view active" data-panel-view="all">
+      <div class="v2-timeline-list">
+        <article>
+          <time>NOW</time>
+          <p>Mission Control V2 initialized.</p>
+        </article>
+
+        <article>
+          <time>NOW</time>
+          <p>ATLAS panel framework loaded.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="panel-view" data-panel-view="alerts">
+      <p>No mission alerts recorded.</p>
+    </div>
+
+    <div class="panel-view" data-panel-view="atlas">
+      <p>No ATLAS messages recorded.</p>
+    </div>
+  </div>
+</section>
+
+<section class="golive mission-panel mission-actions" data-panel="actions">
+  <div class="mission-action-copy">
+    <small>MISSION CONTROL</small>
+    <strong>READY WHEN YOU ARE</strong>
+  </div>
+
+  <div class="mission-action-buttons">
+    <button type="button">OPEN OBS</button>
+    <button type="button">OPEN REKORDBOX</button>
+    <button class="primary" type="button">
+      PREPARE MISSION
+    </button>
+  </div>
+</section>
+
+</div>
+
+<script src="../ui/cockpit-v2.js"></script>
+
+</body>
+
+</html>

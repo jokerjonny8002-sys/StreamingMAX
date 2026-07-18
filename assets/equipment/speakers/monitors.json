@@ -1,0 +1,139 @@
+[
+  {
+    "id": "jbl-305p-mkii",
+    "brand": "JBL",
+    "name": "305P MkII",
+    "equipmentType": "speakers",
+    "category": "Studio Monitor",
+    "description": "Powered five-inch studio monitor.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "type": "Powered Studio Monitor"
+    },
+    "usbDetect": [
+      "JBL 305P MkII",
+      "305P MkII"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "jbl-305p-mkii",
+    "manufacturer": "JBL",
+    "displayName": "305P MkII",
+    "family": "305P",
+    "model": "MkII",
+    "subcategory": "Studio Monitor",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "type": "Powered Studio Monitor"
+    },
+    "connections": [],
+    "compatibleWith": [],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  },
+  {
+    "id": "kali-lp6-v2",
+    "brand": "Kali Audio",
+    "name": "LP-6 V2",
+    "equipmentType": "speakers",
+    "category": "Studio Monitor",
+    "description": "Powered six-and-a-half-inch studio monitor.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "type": "Powered Studio Monitor"
+    },
+    "usbDetect": [
+      "Kali LP-6 V2",
+      "LP-6 V2"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "kali-lp6-v2",
+    "manufacturer": "Kali Audio",
+    "displayName": "LP-6 V2",
+    "family": "LP",
+    "model": "6 V2",
+    "subcategory": "Studio Monitor",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "type": "Powered Studio Monitor"
+    },
+    "connections": [],
+    "compatibleWith": [],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  },
+  {
+    "id": "krk-rokit-6",
+    "brand": "KRK",
+    "name": "Rokit 6",
+    "equipmentType": "speakers",
+    "category": "Studio Monitor",
+    "description": "Powered studio monitor speaker.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "type": "Powered Studio Monitor"
+    },
+    "usbDetect": [
+      "KRK Rokit 6"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "krk-rokit-6",
+    "manufacturer": "KRK",
+    "displayName": "Rokit 6",
+    "family": "Rokit",
+    "model": "6",
+    "subcategory": "Studio Monitor",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "type": "Powered Studio Monitor"
+    },
+    "connections": [],
+    "compatibleWith": [],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  }
+]

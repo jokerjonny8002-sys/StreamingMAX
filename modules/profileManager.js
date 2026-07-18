@@ -9,6 +9,7 @@ const defaultProfile = {
   nickname: "",
   preferredNameType: "realName",
   atlasPersonality: "casual",
+  atlasHumor: "friendly",
   studioEquipment: []
 };
 

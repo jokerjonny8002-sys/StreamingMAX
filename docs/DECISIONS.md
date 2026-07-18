@@ -86,3 +86,21 @@ Cleanup features must include:
 - Protected folders
 - Trash-based deletion where possible
 - No deceptive performance claims
+
+## D008 — “Idle” Is Not Mission-Control Language
+
+The word “Idle” must not appear in the primary Mission Control interface.
+
+Reason:
+
+A technically idle network adapter does not tell the Commander whether the internet is usable or the mission is ready.
+
+Preferred language:
+
+- Checking
+- Internet Ready
+- Internet Needs Review
+- Internet Not Ready
+- Monitoring
+
+Raw operating-system states may remain available in diagnostic logs.

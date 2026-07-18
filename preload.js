@@ -43,6 +43,9 @@ contextBridge.exposeInMainWorld("streamingMax", {
   getTopProcesses: () =>
     ipcRenderer.invoke("get-top-processes"),
 
+  endProcess: pid =>
+    ipcRenderer.invoke("end-process", pid),
+
   detectStudio: () =>
     ipcRenderer.invoke("detect-studio"),
 
@@ -52,8 +55,14 @@ contextBridge.exposeInMainWorld("streamingMax", {
   getReadiness: () =>
     ipcRenderer.invoke("get-readiness"),
 
+  getMissionState: () =>
+    ipcRenderer.invoke("get-mission-state"),
+
   getAtlasMessage: () =>
     ipcRenderer.invoke("get-atlas-message"),
+
+  atlasChat: message =>
+    ipcRenderer.invoke("atlas-chat", message),
 
   runPreflightCheck: () =>
     ipcRenderer.invoke("run-preflight-check"),

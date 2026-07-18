@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>StreamingMAX Cockpit v2</title>
+
+    <link rel="stylesheet" href="../themes/cockpit-v2.css">
+</head>
+
+<body>
+
+<div class="cockpit">
+
+<header class="command-bar">
+  <div class="atlas-identity">
+    <div class="atlas-orb" aria-hidden="true">
+      <div class="atlas-orb-core"></div>
+    </div>
+
+    <div>
+      <div class="atlas-title-row">
+        <h1>ATLAS</h1>
+        <span class="atlas-online">
+          <span class="status-dot"></span>
+          ONLINE
+        </span>
+      </div>
+
+      <p class="atlas-greeting">
+        Good evening, Commander.
+      </p>
+    </div>
+  </div>
+
+  <div class="mission-summary">
+    <div class="mission-label">
+      <small>CURRENT MISSION</small>
+      <strong>STREAMING</strong>
+    </div>
+
+    <div class="mission-readiness">
+      <small>MISSION READINESS</small>
+
+      <div class="readiness-value">
+        <strong>98</strong>
+        <span>/100</span>
+      </div>
+
+      <span class="ready-badge">MISSION READY</span>
+    </div>
+  </div>
+
+  <div class="command-meta">
+    <div>
+      <small>LOCAL TIME</small>
+      <strong id="v2Clock">11:59 PM</strong>
+    </div>
+
+    <div>
+      <small>SESSION</small>
+      <strong id="v2Session">00:00:00</strong>
+    </div>
+
+    <span class="developer-badge">
+      DEV
+    </span>
+  </div>
+
+  <div class="system-strip">
+  <span id="v2Rx3Chip" class="system-chip scanning">
+    RX3
+  </span>
+
+  <span id="v2ObsChip" class="system-chip scanning">
+    OBS
+  </span>
+
+  <span id="v2CameraChip" class="system-chip scanning">
+    SONY A6400
+  </span>
+
+  <span id="v2ScarlettChip" class="system-chip scanning">
+    SCARLETT
+  </span>
+
+  <span id="v2NetworkChip" class="system-chip scanning">
+    NETWORK
+  </span>
+
+  <span id="v2SleepChip" class="system-chip scanning">
+    SLEEP GUARD
+  </span>
+</div>
+
+</header>
+
+<nav class="department-nav" aria-label="StreamingMAX departments">
+  <button class="department-tab active" data-department="home" type="button">
+    HOME
+  </button>
+
+  <button class="department-tab" data-department="studio" type="button">
+    STUDIO
+  </button>
+
+  <button class="department-tab" data-department="network" type="button">
+    NETWORK
+  </button>
+
+  <button class="department-tab" data-department="performance" type="button">
+    PERFORMANCE
+  </button>
+
+  <button class="department-tab" data-department="atlas" type="button">
+    ATLAS
+  </button>
+
+  <button class="department-tab" data-department="settings" type="button">
+    SETTINGS
+  </button>
+</nav>
+
+<main class="department-stage">
+  <section class="department-view active" data-department-view="home">
+  <div class="home-v3">
+
+    <section class="atlas-mission-card">
+      <div class="atlas-mission-header">
+        <div class="atlas-mission-identity">
+          <div class="atlas-mission-orb" aria-hidden="true">
+            <div class="atlas-mission-orb-core"></div>
+          </div>
+
+          <div>
+            <small>ATLAS MISSION CONTROL</small>
+            <h2>Good evening, Commander.</h2>
+          </div>
+        </div>
+
+        <span id="homeMissionBadge" class="home-mission-badge checking">
+          CHECKING SYSTEMS
+        </span>
+      </div>
+
+      <div class="atlas-mission-body">
+        <div class="atlas-situation">
+          <small>SITUATION REPORT</small>
+
+          <ul class="atlas-report-list">
+            <li id="homePerformanceReport">
+              <span class="report-light checking"></span>
+              Performance is being evaluated.
+            </li>
+
+            <li id="homeNetworkReport">
+              <span class="report-light checking"></span>
+              Internet readiness is being checked.
+            </li>
+
+            <li id="homeStudioReport">
+              <span class="report-light checking"></span>
+              Studio equipment detection is standing by.
+            </li>
+          </ul>
+        </div>
+
+        <div class="atlas-recommendation">
+          <small>ATLAS RECOMMENDATION</small>
+
+          <h3 id="homeAtlasRecommendation">
+            Let me finish checking the important stuff.
+          </h3>
+
+          <p id="homeAtlasObservation">
+            I’ll give you one clear next step when the initial scan is complete.
+          </p>
+        </div>
+      </div>
+
+      <div class="atlas-mission-actions mission-action-grid">
+        <button
+          id="homePrepareMission"
+          class="mission-action-tile mission-prepare-tile"
+          type="button"
+          data-tile-icon="🚀"
+        >
+          <span class="mission-tile-icon">🚀</span>
+          <strong>PREPARE</strong>
+          <small id="homePrepareStatus">MISSION CHECK</small>
+        </button>
+
+        <button
+          class="mission-action-tile mission-obs-tile"
+          type="button"
+          data-main-launch="obs"
+          data-tile-icon="📹"
+        >
+          <span class="mission-tile-icon">📹</span>
+          <strong>OBS</strong>
+          <small id="homeObsTileStatus">CHECKING</small>
+        </button>
+
+        <button
+          class="mission-action-tile mission-rekordbox-tile"
+          type="button"
+          data-main-launch="rekordbox"
+          data-tile-icon="🎧"
+        >
+          <span class="mission-tile-icon">🎧</span>
+          <strong>REKORDBOX</strong>
+          <small id="homeRekordboxTileStatus">CHECKING</small>
+        </button>
+
+        <button
+          id="homeSleepGuardButton"
+          class="mission-action-tile mission-sleep-tile"
+          type="button"
+          data-tile-icon="🛡️"
+        >
+          <span class="mission-tile-icon">🛡️</span>
+          <strong>SLEEP GUARD</strong>
+          <small id="homeSleepGuardStatus">CHECKING</small>
+        </button>
+
+        <button
+          id="homeSpeedTestButton"
+          class="mission-action-tile mission-network-tile"
+          type="button"
+          data-tile-icon="🌐"
+        >
+          <span class="mission-tile-icon">🌐</span>
+          <strong>NETWORK</strong>
+          <small id="homeNetworkTileStatus">READY</small>
+        </button>
+
+        <button
+          id="homeCleanButton"
+          class="mission-action-tile mission-clean-tile"
+          type="button"
+          data-tile-icon="🧹"
+        >
+          <span class="mission-tile-icon">🧹</span>
+          <strong>CLEAN</strong>
+          <small id="homeCleanTileStatus">READY</small>
+        </button>
+
+        <button
+          class="mission-action-tile mission-atlas-tile"
+          type="button"
+          data-open-department="atlas"
+          data-tile-icon="🤖"
+        >
+          <span class="mission-tile-icon">🤖</span>
+          <strong>ATLAS</strong>
+          <small>ONLINE</small>
+        </button>
+
+        <span class="atlas-standing-by">
+          ATLAS standing by.
+        </span>
+      </div>
+    </section>
+
+    <div class="home-status-row">
+
+      <button
+        class="home-status-widget performance-widget"
+        type="button"
+        data-open-department="performance"
+      >
+        <div class="home-widget-heading">
+          <span>PERFORMANCE</span>
+          <strong id="homePerformanceStatus">CHECKING</strong>
+        </div>
+
+        <dl class="home-widget-data">
+          <div>
+            <dt>CPU</dt>
+            <dd id="homeCpuValue">--%</dd>
+          </div>
+
+          <div>
+            <dt>MEMORY</dt>
+            <dd id="homeMemoryValue">--%</dd>
+          </div>
+
+          <div>
+            <dt>MISSION IMPACT</dt>
+            <dd id="homeImpactValue">CHECKING</dd>
+          </div>
+        </dl>
+      </button>
+
+      <button
+        class="home-status-widget network-widget"
+        type="button"
+        data-open-department="network"
+      >
+        <div class="home-widget-heading">
+          <span>NETWORK</span>
+          <strong id="homeNetworkStatus">CHECKING</strong>
+        </div>
+
+        <dl class="home-widget-data">
+          <div>
+            <dt>DOWNLOAD</dt>
+            <dd id="homeDownloadValue">-- Mbps</dd>
+          </div>
+
+          <div>
+            <dt>UPLOAD</dt>
+            <dd id="homeUploadValue">-- Mbps</dd>
+          </div>
+
+          <div>
+            <dt>LATENCY</dt>
+            <dd id="homeLatencyValue">-- ms</dd>
+          </div>
+        </dl>
+      </button>
+
+      <button
+        class="home-status-widget studio-widget"
+        type="button"
+        data-open-department="studio"
+      >
+        <div class="home-widget-heading">
+          <span>STUDIO</span>
+          <strong id="homeStudioStatus">CHECKING</strong>
+        </div>
+
+        <dl class="home-widget-data">
+          <div>
+            <dt>OBS</dt>
+            <dd id="homeObsValue">CHECKING</dd>
+          </div>
+
+          <div>
+            <dt>RX3</dt>
+            <dd id="homeRx3Value">UNKNOWN</dd>
+          </div>
+
+          <div>
+            <dt>AUDIO</dt>
+            <dd id="homeAudioValue">UNKNOWN</dd>
+          </div>
+        </dl>
+      </button>
+
+    </div>
+
+    <div class="home-lower-row">
+
+      <section class="home-timeline-widget">
+        <div class="home-section-heading">
+          <div>
+            <small>RECENT ACTIVITY</small>
+            <h3>MISSION TIMELINE</h3>
+          </div>
+
+          <button
+            type="button"
+            data-open-department="atlas"
+          >
+            VIEW HISTORY
+          </button>
+        </div>
+
+        <div id="homeTimelineList" class="home-timeline-list">
+          <article>
+            <time>NOW</time>
+            <p>Home V3 Mission Control initialized.</p>
+          </article>
+
+          <article>
+            <time>NOW</time>
+            <p>ATLAS is checking mission readiness.</p>
+          </article>
+
+          <article>
+            <time>NOW</time>
+            <p>Department navigation is online.</p>
+          </article>
+        </div>
+      </section>
+
+      
+
+    </div>
+
+  </div>
+</section>
+
+<section class="department-view" data-department-view="studio">
+  <header class="department-heading">
+    <div>
+      <small>STREAMINGMAX DEPARTMENT</small>
+      <h2>STUDIO</h2>
+      <p>Build and save your personal DJ and streaming setup.</p>
+    </div>
+
+    <span
+      id="v2StudioDeviceCount"
+      class="department-status healthy"
+    >
+      0 DEVICES
+    </span>
+  </header>
+
+  <section class="studio-software-rack">
+    <div class="studio-v2-heading">
+      <div>
+        <small>STUDIO SOFTWARE</small>
+        <h3>SOFTWARE RACK</h3>
+      </div>
+
+      <span id="v2SoftwareOnlineCount">
+        CHECKING
+      </span>
+    </div>
+
+    <div class="studio-software-grid">
+      <article
+        id="v2ObsSoftwareCard"
+        class="studio-software-card checking"
+      >
+        <div class="studio-software-status">
+          <span class="software-status-light"></span>
+
+          <div>
+            <small>STREAMING</small>
+            <h4>OBS STUDIO</h4>
+          </div>
+        </div>
+
+        <div class="studio-software-details">
+          <span>STATUS</span>
+          <strong id="v2ObsSoftwareStatus">
+            CHECKING
+          </strong>
+        </div>
+
+        <button
+          type="button"
+          data-software-launch="obs"
+        >
+          OPEN OBS
+        </button>
+      </article>
+
+      <article
+        id="v2RekordboxSoftwareCard"
+        class="studio-software-card checking"
+      >
+        <div class="studio-software-status">
+          <span class="software-status-light"></span>
+
+          <div>
+            <small>DJ SOFTWARE</small>
+            <h4>REKORDBOX</h4>
+          </div>
+        </div>
+
+        <div class="studio-software-details">
+          <span>STATUS</span>
+          <strong id="v2RekordboxSoftwareStatus">
+            CHECKING
+          </strong>
+        </div>
+
+        <button
+          type="button"
+          data-software-launch="rekordbox"
+        >
+          OPEN REKORDBOX
+        </button>
+      </article>
+    </div>
+  </section>
+
+  <div class="studio-builder-v2">
+    <section class="studio-search-panel">
+      <div class="studio-v2-heading">
+        <div>
+          <small>EQUIPMENT LIBRARY</small>
+          <h3>ADD DJ EQUIPMENT</h3>
+        </div>
+
+        <span id="v2EquipmentResultCount">
+          0 RESULTS
+        </span>
+      </div>
+
+      <div class="studio-search-row-v2">
+        <input
+          id="v2EquipmentSearchInput"
+          type="search"
+          placeholder="Search RX3, FLX10, CDJ-3000, Pioneer..."
+          autocomplete="off"
+        />
+
+        <button
+          id="v2EquipmentSearchBtn"
+          type="button"
+        >
+          SEARCH
+        </button>
+      </div>
+
+      <div
+        id="v2EquipmentResults"
+        class="studio-equipment-results-v2"
+      >
+        <p class="studio-empty-v2">
+          Search for your DJ controller or media player.
+        </p>
+      </div>
+    </section>
+
+    <section class="my-studio-panel-v2">
+      <div class="studio-v2-heading">
+        <div>
+          <small>SAVED PROFILE</small>
+          <h3>MY STUDIO</h3>
+        </div>
+
+        <span id="v2MyStudioCount">
+          0 ITEMS
+        </span>
+      </div>
+
+      <div
+        id="v2MyStudioList"
+        class="my-studio-list-v2"
+      >
+        <p class="studio-empty-v2">
+          No equipment added yet.
+        </p>
+      </div>
+    </section>
+  </div>
+</section>
+
+<section class="department-view" data-department-view="network">
+  <header class="department-heading">
+    <div>
+      <small>STREAMINGMAX DEPARTMENT</small>
+      <h2>NETWORK</h2>
+      <p>Connection testing, streaming readiness, latency, and ATLAS recommendations.</p>
+    </div>
+
+    <span
+      id="networkDepartmentStatus"
+      class="department-status checking"
+    >
+      STANDING BY
+    </span>
+  </header>
+
+  <div class="department-workspace network-workspace">
+    <aside class="department-sidebar">
+      <button
+        class="workspace-tab active"
+        type="button"
+      >
+        SPEED TEST
+      </button>
+    </aside>
+
+    <div class="department-content network-content">
+      <div class="network-title-row">
+        <div>
+          <small>MISSION NETWORK REPORT</small>
+          <h3>Streaming Connection Test</h3>
+        </div>
+
+        <button
+          id="networkSpeedTestButton"
+          class="department-primary-action"
+          type="button"
+        >
+          RUN SPEED TEST
+        </button>
+      </div>
+
+      <p id="networkTestMessage">
+        Run a test to measure your actual download, upload,
+        latency, and streaming readiness.
+      </p>
+
+      <div class="department-metric-grid network-metric-grid">
+        <article>
+          <small>DOWNLOAD</small>
+          <strong id="networkDownloadValue">-- Mbps</strong>
+        </article>
+
+        <article>
+          <small>UPLOAD</small>
+          <strong id="networkUploadValue">-- Mbps</strong>
+        </article>
+
+        <article>
+          <small>LATENCY</small>
+          <strong id="networkLatencyValue">-- ms</strong>
+        </article>
+
+        <article>
+          <small>RESPONSIVENESS</small>
+          <strong id="networkResponsivenessValue">-- RPM</strong>
+        </article>
+
+        <article>
+          <small>STREAM RATING</small>
+          <strong id="networkRatingValue">NOT TESTED</strong>
+        </article>
+
+        <article>
+          <small>OBS BITRATE</small>
+          <strong id="networkBitrateValue">-- kbps</strong>
+        </article>
+      </div>
+
+      <div class="network-platform-grid">
+        <article>
+          <small>TWITCH</small>
+          <strong id="networkTwitchValue">NOT TESTED</strong>
+        </article>
+
+        <article>
+          <small>TIKTOK</small>
+          <strong id="networkTiktokValue">NOT TESTED</strong>
+        </article>
+
+        <article>
+          <small>YOUTUBE</small>
+          <strong id="networkYoutubeValue">NOT TESTED</strong>
+        </article>
+      </div>
+
+      <div class="network-atlas-report">
+        <small>ATLAS RECOMMENDATION</small>
+
+        <h4 id="networkAtlasHeadline">
+          Connection analysis standing by.
+        </h4>
+
+        <p id="networkAtlasMessage">
+          Start the speed test when you are ready.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="department-view" data-department-view="performance">
+  <header class="department-heading">
+    <div>
+      <small>STREAMINGMAX DEPARTMENT</small>
+      <h2>PERFORMANCE</h2>
+      <p>Live CPU, memory, storage, processes, and mission impact.</p>
+    </div>
+
+    <span
+      id="performanceDepartmentStatus"
+      class="department-status checking"
+    >
+      CHECKING
+    </span>
+  </header>
+
+  <div class="department-workspace performance-workspace">
+    <aside class="department-sidebar">
+      <button
+        class="workspace-tab active"
+        type="button"
+        data-performance-tab="overview"
+      >
+        OVERVIEW
+      </button>
+
+      <button
+        class="workspace-tab"
+        type="button"
+        data-performance-tab="memory"
+      >
+        MEMORY
+      </button>
+
+      <button
+        class="workspace-tab"
+        type="button"
+        data-performance-tab="storage"
+      >
+        STORAGE
+      </button>
+
+      <button
+        class="workspace-tab"
+        type="button"
+        data-performance-tab="processes"
+      >
+        PROCESSES
+      </button>
+    </aside>
+
+    <div class="department-content performance-content">
+      <section
+        class="performance-view active"
+        data-performance-view="overview"
+      >
+        <div class="performance-title-row">
+          <div>
+            <small>LIVE SYSTEM HEALTH</small>
+            <h3>Performance Overview</h3>
+          </div>
+
+          <button
+            id="performanceRefreshButton"
+            class="department-primary-action"
+            type="button"
+          >
+            REFRESH
+          </button>
+        </div>
+
+        <div class="department-metric-grid performance-metric-grid">
+          <article>
+            <small>CPU</small>
+            <strong id="performanceCpuValue">--%</strong>
+          </article>
+
+          <article>
+            <small>MEMORY</small>
+            <strong id="performanceMemoryValue">--%</strong>
+          </article>
+
+          <article>
+            <small>STORAGE</small>
+            <strong id="performanceStorageValue">--%</strong>
+          </article>
+
+          <article>
+            <small>SCORE</small>
+            <strong id="performanceScoreValue">--/100</strong>
+          </article>
+
+          <article>
+            <small>GRADE</small>
+            <strong id="performanceGradeValue">--</strong>
+          </article>
+
+          <article>
+            <small>DROPPED-FRAME RISK</small>
+            <strong id="performanceRiskValue">CHECKING</strong>
+          </article>
+        </div>
+
+        <div class="performance-summary-card">
+          <small>ATLAS ASSESSMENT</small>
+          <h4 id="performanceAssessmentTitle">
+            Evaluating system performance...
+          </h4>
+          <p id="performanceAssessmentMessage">
+            Live results will appear after the first scan.
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="performance-view"
+        data-performance-view="memory"
+      >
+        <div class="performance-title-row">
+          <div>
+            <small>MEMORY HEALTH</small>
+            <h3>System Memory</h3>
+          </div>
+        </div>
+
+        <div class="department-metric-grid">
+          <article>
+            <small>MEMORY USED</small>
+            <strong id="performanceMemoryPercent">--%</strong>
+          </article>
+
+          <article>
+            <small>AVAILABLE</small>
+            <strong id="performanceFreeMemory">-- GB</strong>
+          </article>
+
+          <article>
+            <small>TOTAL</small>
+            <strong id="performanceTotalMemory">-- GB</strong>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="performance-view"
+        data-performance-view="storage"
+      >
+        <div class="performance-title-row">
+          <div>
+            <small>STORAGE HEALTH</small>
+            <h3>Main Storage</h3>
+          </div>
+        </div>
+
+        <div class="department-metric-grid">
+          <article>
+            <small>DISK USED</small>
+            <strong id="performanceDiskPercent">--%</strong>
+          </article>
+
+          <article>
+            <small>STATUS</small>
+            <strong id="performanceDiskStatus">CHECKING</strong>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="performance-view"
+        data-performance-view="processes"
+      >
+        <div class="performance-title-row">
+          <div>
+            <small>RESOURCE USAGE</small>
+            <h3>Top Memory Processes</h3>
+          </div>
+        </div>
+
+        <div
+          id="performanceProcessList"
+          class="performance-process-list"
+        >
+          <p class="performance-empty">
+            Loading processes...
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<section class="department-view" data-department-view="atlas">
+  <header class="department-heading">
+    <div>
+      <small>STREAMINGMAX DEPARTMENT</small>
+      <h2>ATLAS</h2>
+      <p>Your local studio co-pilot, system guide, and controlled smart-ass.</p>
+    </div>
+
+    <span class="department-status healthy">
+      ONLINE
+    </span>
+  </header>
+
+  <div class="atlas-department-layout">
+    <div
+      id="v2AtlasConversation"
+      class="atlas-conversation"
+    >
+      <div class="atlas-message">
+        <span>ATLAS</span>
+
+        <p>
+          Mission Control is online. Ask me about your system,
+          stream readiness, OBS, Rekordbox, network, or studio gear.
+        </p>
+      </div>
+    </div>
+
+    <div class="atlas-chat-controls">
+      <label>
+        <span>ATLAS HUMOR</span>
+
+        <select id="v2AtlasHumor">
+          <option value="professional">
+            Professional
+          </option>
+
+          <option value="friendly">
+            Friendly
+          </option>
+
+          <option value="full">
+            Full ATLAS
+          </option>
+        </select>
+      </label>
+
+      <span id="v2AtlasSaveStatus">
+        SAVED TO PROFILE
+      </span>
+    </div>
+
+    <form
+      id="v2AtlasComposer"
+      class="atlas-composer"
+    >
+      <input
+        id="v2AtlasInput"
+        type="text"
+        placeholder="Ask ATLAS something..."
+        aria-label="Message ATLAS"
+        autocomplete="off"
+      />
+
+      <button type="submit">
+        SEND
+      </button>
+    </form>
+  </div>
+</section>
+
+<section class="department-view" data-department-view="settings">
+    <header class="department-heading">
+      <div>
+        <small>STREAMINGMAX DEPARTMENT</small>
+        <h2>SETTINGS</h2>
+        <p>Profiles, layouts, appearance, ATLAS memory, privacy, and developer tools.</p>
+      </div>
+
+      <span class="department-status">LOCAL</span>
+    </header>
+
+    <div class="department-workspace">
+      <aside class="department-sidebar">
+        <button class="workspace-tab active" type="button">GENERAL</button>
+        <button class="workspace-tab" type="button">LAYOUT</button>
+        <button class="workspace-tab" type="button">APPEARANCE</button>
+        <button class="workspace-tab" type="button">ATLAS MEMORY</button>
+        <button class="workspace-tab" type="button">PRIVACY</button>
+        <button class="workspace-tab" type="button">DEVELOPER</button>
+      </aside>
+
+      <div class="department-content">
+        <h3>StreamingMAX configuration.</h3>
+        <p>
+          The hidden First Light Protocol will eventually live inside the
+          protected ATLAS developer settings.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+</div>
+
+<script src="../ui/cockpit-v2.js"></script>
+
+</body>
+
+</html>

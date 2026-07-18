@@ -1,0 +1,54 @@
+[
+  {
+    "id": "obsbot-tiny-2",
+    "brand": "OBSBOT",
+    "name": "Tiny 2",
+    "equipmentType": "cameras",
+    "category": "PTZ Webcam",
+    "description": "AI-powered 4K PTZ webcam.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [
+      "OBS Studio",
+      "OBSBOT Center"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "resolution": "4K"
+    },
+    "usbDetect": [
+      "OBSBOT Tiny 2",
+      "Tiny 2"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "obsbot-tiny-2",
+    "manufacturer": "OBSBOT",
+    "displayName": "Tiny 2",
+    "family": "Tiny",
+    "model": "2",
+    "subcategory": "PTZ Webcam",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "resolution": "4K"
+    },
+    "connections": [],
+    "compatibleWith": [
+      "OBS Studio",
+      "OBSBOT Center"
+    ],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  }
+]

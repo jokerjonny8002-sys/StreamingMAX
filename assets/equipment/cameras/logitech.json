@@ -1,0 +1,210 @@
+[
+  {
+    "id": "logitech-brio-100",
+    "brand": "Logitech",
+    "name": "Brio 100",
+    "equipmentType": "cameras",
+    "category": "USB Webcam",
+    "description": "Compact Full-HD USB webcam.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [
+      "OBS Studio",
+      "Logi Tune"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "resolution": "1080p"
+    },
+    "usbDetect": [
+      "Logitech Brio 100",
+      "Brio 100"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "logitech-brio-100",
+    "manufacturer": "Logitech",
+    "displayName": "Brio 100",
+    "family": "Brio",
+    "model": "100",
+    "subcategory": "USB Webcam",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "resolution": "1080p"
+    },
+    "connections": [],
+    "compatibleWith": [
+      "OBS Studio",
+      "Logi Tune"
+    ],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  },
+  {
+    "id": "logitech-brio-500",
+    "brand": "Logitech",
+    "name": "Brio 500",
+    "equipmentType": "cameras",
+    "category": "USB Webcam",
+    "description": "Full-HD USB webcam with adjustable framing.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [
+      "OBS Studio",
+      "Logi Tune"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "resolution": "1080p"
+    },
+    "usbDetect": [
+      "Logitech Brio 500",
+      "Brio 500"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "logitech-brio-500",
+    "manufacturer": "Logitech",
+    "displayName": "Brio 500",
+    "family": "Brio",
+    "model": "500",
+    "subcategory": "USB Webcam",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "resolution": "1080p"
+    },
+    "connections": [],
+    "compatibleWith": [
+      "OBS Studio",
+      "Logi Tune"
+    ],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  },
+  {
+    "id": "logitech-c920",
+    "brand": "Logitech",
+    "name": "C920",
+    "equipmentType": "cameras",
+    "category": "USB Webcam",
+    "description": "Full-HD USB webcam.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [
+      "OBS Studio",
+      "Logi Tune"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "resolution": "1080p"
+    },
+    "usbDetect": [
+      "Logitech HD Pro Webcam C920",
+      "C920"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "logitech-c920",
+    "manufacturer": "Logitech",
+    "displayName": "C920",
+    "family": "C",
+    "model": "920",
+    "subcategory": "USB Webcam",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "resolution": "1080p"
+    },
+    "connections": [],
+    "compatibleWith": [
+      "OBS Studio",
+      "Logi Tune"
+    ],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  },
+  {
+    "id": "logitech-c922",
+    "brand": "Logitech",
+    "name": "C922",
+    "equipmentType": "cameras",
+    "category": "USB Webcam",
+    "description": "Full-HD streaming webcam.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [
+      "OBS Studio",
+      "Logi Tune"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "resolution": "1080p"
+    },
+    "usbDetect": [
+      "Logitech C922",
+      "C922"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "logitech-c922",
+    "manufacturer": "Logitech",
+    "displayName": "C922",
+    "family": "C",
+    "model": "922",
+    "subcategory": "USB Webcam",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "resolution": "1080p"
+    },
+    "connections": [],
+    "compatibleWith": [
+      "OBS Studio",
+      "Logi Tune"
+    ],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  }
+]

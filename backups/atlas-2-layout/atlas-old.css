@@ -1,0 +1,508 @@
+/* =========================================================
+   StreamingMAX — ATLAS Department
+   This file is the final authority for ATLAS chat layout.
+   ========================================================= */
+
+section.department-view[data-department-view="atlas"] {
+  display: none;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 8px;
+
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;
+  align-items: stretch;
+  justify-items: stretch;
+  text-align: left;
+}
+
+section.department-view[data-department-view="atlas"].active {
+  display: grid;
+}
+
+/* ===== Department heading ===== */
+
+section.department-view[data-department-view="atlas"]
+.department-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 68px;
+  margin: 0;
+  padding: 12px 16px;
+
+  box-sizing: border-box;
+}
+
+section.department-view[data-department-view="atlas"]
+.department-heading > div {
+  min-width: 0;
+}
+
+section.department-view[data-department-view="atlas"]
+.department-heading h2 {
+  margin: 3px 0 0;
+}
+
+section.department-view[data-department-view="atlas"]
+.department-heading p {
+  margin: 5px 0 0;
+}
+
+/* ===== Main ATLAS chat frame ===== */
+
+section.department-view[data-department-view="atlas"]
+.atlas-department-layout {
+  display: grid;
+  grid-template-rows:
+    minmax(0, 1fr)
+    auto
+    auto;
+
+  gap: 8px;
+
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+  box-sizing: border-box;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(5, 12, 22, 0.96);
+}
+
+/* ===== Scrollable conversation only ===== */
+
+section.department-view[data-department-view="atlas"]
+.atlas-conversation {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 9px;
+
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+
+  padding: 12px;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+
+  box-sizing: border-box;
+}
+
+/* ===== Chat messages ===== */
+
+section.department-view[data-department-view="atlas"]
+.atlas-message,
+section.department-view[data-department-view="atlas"]
+.commander-message {
+  width: fit-content;
+  max-width: min(78%, 760px);
+
+  padding: 10px 12px;
+  border-radius: 10px;
+
+  box-sizing: border-box;
+}
+
+section.department-view[data-department-view="atlas"]
+.atlas-message {
+  align-self: flex-start;
+
+  border: 1px solid rgba(34, 217, 255, 0.3);
+  background: rgba(8, 28, 46, 0.78);
+}
+
+section.department-view[data-department-view="atlas"]
+.commander-message {
+  align-self: flex-end;
+
+  border: 1px solid rgba(140, 69, 255, 0.38);
+  background: rgba(65, 28, 105, 0.52);
+}
+
+section.department-view[data-department-view="atlas"]
+.atlas-message span,
+section.department-view[data-department-view="atlas"]
+.commander-message span {
+  display: block;
+  margin-bottom: 5px;
+
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+}
+
+section.department-view[data-department-view="atlas"]
+.atlas-message span {
+  color: var(--cyan);
+}
+
+section.department-view[data-department-view="atlas"]
+.commander-message span {
+  color: #bda1ff;
+}
+
+section.department-view[data-department-view="atlas"]
+.atlas-message p,
+section.department-view[data-department-view="atlas"]
+.commander-message p {
+  margin: 0;
+
+  color: #d7e5f3;
+  font-size: 10px;
+  line-height: 1.5;
+
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* ===== Fixed humor controls ===== */
+
+section.department-view[data-department-view="atlas"]
+.atlas-chat-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+
+  margin: 0;
+  padding: 8px 12px;
+
+  box-sizing: border-box;
+
+  border-top: 1px solid rgba(88, 139, 196, 0.16);
+  border-bottom: 1px solid rgba(88, 139, 196, 0.16);
+  background: rgba(3, 10, 18, 0.94);
+}
+
+section.department-view[data-department-view="atlas"]
+.atlas-chat-controls label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+section.department-view[data-department-view="atlas"]
+.atlas-chat-controls label > span,
+section.department-view[data-department-view="atlas"]
+#v2AtlasSaveStatus {
+  color: #7f93aa;
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: 0.7px;
+}
+
+section.department-view[data-department-view="atlas"]
+#v2AtlasHumor {
+  min-height: 32px;
+  padding: 0 9px;
+
+  border: 1px solid rgba(34, 217, 255, 0.36);
+  border-radius: 7px;
+
+  color: #ffffff;
+  background: #071321;
+}
+
+/* ===== Fixed composer ===== */
+
+section.department-view[data-department-view="atlas"]
+.atlas-composer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 112px;
+  gap: 8px;
+
+  position: static;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 56px;
+
+  margin: 0;
+  padding: 8px 10px 10px;
+
+  box-sizing: border-box;
+  background: rgba(3, 10, 18, 0.98);
+}
+
+section.department-view[data-department-view="atlas"]
+.atlas-composer input {
+  display: block;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 40px;
+
+  margin: 0;
+  padding: 0 12px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(88, 139, 196, 0.32);
+  border-radius: 9px;
+  outline: none;
+
+  color: #ffffff;
+  background: rgba(2, 8, 15, 0.95);
+  font: inherit;
+  font-size: 11px;
+}
+
+section.department-view[data-department-view="atlas"]
+.atlas-composer input:focus {
+  border-color: rgba(34, 217, 255, 0.7);
+  box-shadow: 0 0 14px rgba(34, 217, 255, 0.13);
+}
+
+section.department-view[data-department-view="atlas"]
+.atlas-composer button {
+  width: 112px;
+  min-width: 112px;
+  min-height: 40px;
+
+  margin: 0;
+  padding: 0 12px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(34, 217, 255, 0.48);
+  border-radius: 9px;
+
+  color: #ffffff;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(26, 113, 186, 0.96),
+      rgba(102, 41, 182, 0.96)
+    );
+
+  cursor: pointer;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.7px;
+}
+
+/* ===== Smaller windows ===== */
+
+@media (max-height: 760px) {
+  section.department-view[data-department-view="atlas"]
+  .department-heading {
+    min-height: 54px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  section.department-view[data-department-view="atlas"]
+  .department-heading p {
+    display: none;
+  }
+
+  section.department-view[data-department-view="atlas"]
+  .atlas-chat-controls {
+    min-height: 42px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  section.department-view[data-department-view="atlas"]
+  .atlas-composer {
+    min-height: 50px;
+    padding-top: 5px;
+    padding-bottom: 6px;
+  }
+}
+
+@media (max-width: 720px) {
+  section.department-view[data-department-view="atlas"]
+  .atlas-message,
+  section.department-view[data-department-view="atlas"]
+  .commander-message {
+    max-width: 92%;
+  }
+
+  section.department-view[data-department-view="atlas"]
+  .atlas-composer {
+    grid-template-columns: minmax(0, 1fr) 88px;
+  }
+
+  section.department-view[data-department-view="atlas"]
+  .atlas-composer button {
+    width: 88px;
+    min-width: 88px;
+  }
+
+  section.department-view[data-department-view="atlas"]
+  #v2AtlasSaveStatus {
+    display: none;
+  }
+}
+
+/* =========================================================
+   ATLAS CHAT — HARD VIEWPORT LOCK
+   Keeps humor controls and composer permanently visible.
+   ========================================================= */
+
+section.department-view[data-department-view="atlas"].active {
+  position: relative !important;
+  display: block !important;
+
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+
+  overflow: hidden !important;
+}
+
+/* Fixed-height department heading */
+section.department-view[data-department-view="atlas"]
+.department-heading {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  left: 0 !important;
+
+  height: 68px !important;
+  min-height: 68px !important;
+  max-height: 68px !important;
+
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+/* Workspace fills everything below the heading */
+section.department-view[data-department-view="atlas"]
+.atlas-department-layout {
+  position: absolute !important;
+  top: 76px !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+
+  display: grid !important;
+  grid-template-rows:
+    minmax(0, 1fr)
+    52px
+    58px !important;
+
+  gap: 0 !important;
+
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+/* Only this section is allowed to scroll */
+section.department-view[data-department-view="atlas"]
+.atlas-conversation {
+  grid-row: 1 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-height: none !important;
+
+  padding: 12px !important;
+
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* Humor bar always visible */
+section.department-view[data-department-view="atlas"]
+.atlas-chat-controls {
+  grid-row: 2 !important;
+
+  width: 100% !important;
+  height: 52px !important;
+  min-height: 52px !important;
+  max-height: 52px !important;
+
+  margin: 0 !important;
+  padding: 8px 12px !important;
+
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+/* Text box always visible */
+section.department-view[data-department-view="atlas"]
+.atlas-composer {
+  grid-row: 3 !important;
+
+  position: static !important;
+
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 112px !important;
+  gap: 8px !important;
+
+  width: 100% !important;
+  height: 58px !important;
+  min-height: 58px !important;
+  max-height: 58px !important;
+
+  margin: 0 !important;
+  padding: 8px 10px 10px !important;
+
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+section.department-view[data-department-view="atlas"]
+.atlas-composer input,
+section.department-view[data-department-view="atlas"]
+.atlas-composer button {
+  display: block !important;
+
+  height: 40px !important;
+  min-height: 40px !important;
+  max-height: 40px !important;
+
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+section.department-view[data-department-view="atlas"]
+.atlas-composer input {
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+section.department-view[data-department-view="atlas"]
+.atlas-composer button {
+  width: 112px !important;
+  min-width: 112px !important;
+}

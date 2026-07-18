@@ -1,0 +1,392 @@
+[
+  {
+    "id": "focusrite-scarlett-2i2-gen2",
+    "brand": "Focusrite",
+    "name": "Scarlett 2i2 2nd Gen",
+    "equipmentType": "interfaces",
+    "category": "USB Audio Interface",
+    "description": "Two-input USB audio interface.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [
+      "OBS Studio",
+      "TikTok Studio",
+      "Ableton Live"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "inputs": 2,
+      "outputs": 2
+    },
+    "usbDetect": [
+      "Scarlett 2i2 USB",
+      "Scarlett 2i2"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "focusrite-scarlett-2i2-gen2",
+    "manufacturer": "Focusrite",
+    "displayName": "Scarlett 2i2 2nd Gen",
+    "family": "Scarlett 2i2",
+    "model": "2nd Gen",
+    "subcategory": "USB Audio Interface",
+    "status": "Legacy",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "inputs": 2,
+      "outputs": 2
+    },
+    "connections": [],
+    "compatibleWith": [
+      "OBS Studio",
+      "TikTok Studio",
+      "Ableton Live"
+    ],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  },
+  {
+    "id": "focusrite-scarlett-2i2-gen3",
+    "brand": "Focusrite",
+    "name": "Scarlett 2i2 3rd Gen",
+    "equipmentType": "interfaces",
+    "category": "USB Audio Interface",
+    "description": "Two-input USB audio interface.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [
+      "OBS Studio",
+      "TikTok Studio",
+      "Ableton Live"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "inputs": 2,
+      "outputs": 2
+    },
+    "usbDetect": [
+      "Scarlett 2i2 USB",
+      "Scarlett 2i2"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "focusrite-scarlett-2i2-gen3",
+    "manufacturer": "Focusrite",
+    "displayName": "Scarlett 2i2 3rd Gen",
+    "family": "Scarlett 2i2",
+    "model": "3rd Gen",
+    "subcategory": "USB Audio Interface",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "inputs": 2,
+      "outputs": 2
+    },
+    "connections": [],
+    "compatibleWith": [
+      "OBS Studio",
+      "TikTok Studio",
+      "Ableton Live"
+    ],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  },
+  {
+    "id": "focusrite-scarlett-2i2-gen4",
+    "brand": "Focusrite",
+    "name": "Scarlett 2i2 4th Gen",
+    "equipmentType": "interfaces",
+    "category": "USB Audio Interface",
+    "description": "Two-input USB audio interface.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [
+      "OBS Studio",
+      "TikTok Studio",
+      "Ableton Live"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "inputs": 2,
+      "outputs": 2
+    },
+    "usbDetect": [
+      "Scarlett 2i2 USB",
+      "Scarlett 2i2"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "focusrite-scarlett-2i2-gen4",
+    "manufacturer": "Focusrite",
+    "displayName": "Scarlett 2i2 4th Gen",
+    "family": "Scarlett 2i2",
+    "model": "4th Gen",
+    "subcategory": "USB Audio Interface",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "inputs": 2,
+      "outputs": 2
+    },
+    "connections": [],
+    "compatibleWith": [
+      "OBS Studio",
+      "TikTok Studio",
+      "Ableton Live"
+    ],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  },
+  {
+    "id": "focusrite-scarlett-4i4-gen4",
+    "brand": "Focusrite",
+    "name": "Scarlett 4i4 4th Gen",
+    "equipmentType": "interfaces",
+    "category": "USB Audio Interface",
+    "description": "Four-input, four-output USB audio interface.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [
+      "OBS Studio",
+      "Ableton Live"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "inputs": 4,
+      "outputs": 4
+    },
+    "usbDetect": [
+      "Scarlett 4i4 4th Gen",
+      "Scarlett 4i4"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "focusrite-scarlett-4i4-gen4",
+    "manufacturer": "Focusrite",
+    "displayName": "Scarlett 4i4 4th Gen",
+    "family": "Scarlett 4i4",
+    "model": "4th Gen",
+    "subcategory": "USB Audio Interface",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "inputs": 4,
+      "outputs": 4
+    },
+    "connections": [],
+    "compatibleWith": [
+      "OBS Studio",
+      "Ableton Live"
+    ],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  },
+  {
+    "id": "focusrite-scarlett-solo-gen2",
+    "brand": "Focusrite",
+    "name": "Scarlett Solo 2nd Gen",
+    "equipmentType": "interfaces",
+    "category": "USB Audio Interface",
+    "description": "Compact USB audio interface with microphone and instrument inputs.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [
+      "OBS Studio",
+      "TikTok Studio",
+      "Ableton Live"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "inputs": 2,
+      "outputs": 2
+    },
+    "usbDetect": [
+      "Scarlett Solo USB",
+      "Scarlett Solo"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "focusrite-scarlett-solo-gen2",
+    "manufacturer": "Focusrite",
+    "displayName": "Scarlett Solo 2nd Gen",
+    "family": "Scarlett Solo",
+    "model": "2nd Gen",
+    "subcategory": "USB Audio Interface",
+    "status": "Legacy",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "inputs": 2,
+      "outputs": 2
+    },
+    "connections": [],
+    "compatibleWith": [
+      "OBS Studio",
+      "TikTok Studio",
+      "Ableton Live"
+    ],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  },
+  {
+    "id": "focusrite-scarlett-solo-gen3",
+    "brand": "Focusrite",
+    "name": "Scarlett Solo 3rd Gen",
+    "equipmentType": "interfaces",
+    "category": "USB Audio Interface",
+    "description": "Compact USB audio interface for microphone and instrument recording.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [
+      "OBS Studio",
+      "TikTok Studio",
+      "Ableton Live"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "inputs": 2,
+      "outputs": 2
+    },
+    "usbDetect": [
+      "Scarlett Solo USB",
+      "Scarlett Solo"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "focusrite-scarlett-solo-gen3",
+    "manufacturer": "Focusrite",
+    "displayName": "Scarlett Solo 3rd Gen",
+    "family": "Scarlett Solo",
+    "model": "3rd Gen",
+    "subcategory": "USB Audio Interface",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "inputs": 2,
+      "outputs": 2
+    },
+    "connections": [],
+    "compatibleWith": [
+      "OBS Studio",
+      "TikTok Studio",
+      "Ableton Live"
+    ],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  },
+  {
+    "id": "focusrite-scarlett-solo-gen4",
+    "brand": "Focusrite",
+    "name": "Scarlett Solo 4th Gen",
+    "equipmentType": "interfaces",
+    "category": "USB Audio Interface",
+    "description": "Compact fourth-generation USB audio interface.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [
+      "OBS Studio",
+      "TikTok Studio",
+      "Ableton Live"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "inputs": 2,
+      "outputs": 2
+    },
+    "usbDetect": [
+      "Scarlett Solo 4th Gen",
+      "Scarlett Solo"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "focusrite-scarlett-solo-gen4",
+    "manufacturer": "Focusrite",
+    "displayName": "Scarlett Solo 4th Gen",
+    "family": "Scarlett Solo",
+    "model": "4th Gen",
+    "subcategory": "USB Audio Interface",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "inputs": 2,
+      "outputs": 2
+    },
+    "connections": [],
+    "compatibleWith": [
+      "OBS Studio",
+      "TikTok Studio",
+      "Ableton Live"
+    ],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  }
+]

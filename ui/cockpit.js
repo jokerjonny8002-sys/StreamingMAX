@@ -493,6 +493,10 @@ async function loadProfileSetup() {
       const preferredNameType =
         document.getElementById("profilePreferredName").value;
 
+      const atlasHumor =
+        document.getElementById("profileAtlasHumor")?.value ||
+        "friendly";
+
       const selectedName = {
         realName,
         djName,
@@ -515,7 +519,8 @@ async function loadProfileSetup() {
           djName,
           nickname,
           preferredNameType,
-          atlasPersonality: "casual"
+          atlasPersonality: "casual",
+          atlasHumor
         });
 
         setup.classList.add("hidden");
@@ -839,3 +844,78 @@ function initializeStudioBuilder() {
 }
 
 initializeStudioBuilder();
+
+function runBrandSplash() {
+  const splash = document.getElementById("brandSplash");
+  const bootText = document.getElementById("brandBootText");
+  const bootBar = document.getElementById("brandBootBar");
+  const bootPercent = document.getElementById("brandBootPercent");
+
+  if (!splash) return;
+
+  const stages = [
+    {
+      text: "INITIALIZING ATLAS CORE...",
+      progress: 12
+    },
+    {
+      text: "LOADING USER PROFILE...",
+      progress: 28
+    },
+    {
+      text: "CONNECTING SYSTEM MONITORS...",
+      progress: 46
+    },
+    {
+      text: "LOADING STUDIO EQUIPMENT...",
+      progress: 63
+    },
+    {
+      text: "CHECKING STREAM SERVICES...",
+      progress: 78
+    },
+    {
+      text: "CALIBRATING MISSION CONTROL...",
+      progress: 92
+    },
+    {
+      text: "MISSION CONTROL ONLINE.",
+      progress: 100
+    }
+  ];
+
+  let index = 0;
+
+  function showStage() {
+    const stage = stages[index];
+
+    if (bootText) {
+      bootText.textContent = stage.text;
+    }
+
+    if (bootBar) {
+      bootBar.style.width = `${stage.progress}%`;
+    }
+
+    if (bootPercent) {
+      bootPercent.textContent = `${stage.progress}%`;
+    }
+
+    if (stage.progress === 100) {
+      splash.classList.add("boot-complete");
+
+      setTimeout(() => {
+        splash.classList.add("hidden");
+      }, 1050);
+
+      return;
+    }
+
+    index += 1;
+    setTimeout(showStage, 620);
+  }
+
+  setTimeout(showStage, 350);
+}
+
+runBrandSplash();

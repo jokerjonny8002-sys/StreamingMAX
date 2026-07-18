@@ -1,0 +1,163 @@
+[
+  {
+    "id": "elgato-wave-xlr",
+    "brand": "Elgato",
+    "name": "Wave XLR",
+    "equipmentType": "interfaces",
+    "category": "Streaming Audio Interface",
+    "description": "USB audio interface and mixer for XLR microphones.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [
+      "Wave Link",
+      "OBS Studio"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "inputs": 1,
+      "outputs": 1
+    },
+    "usbDetect": [
+      "Wave XLR",
+      "Elgato Wave XLR"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "elgato-wave-xlr",
+    "manufacturer": "Elgato",
+    "displayName": "Wave XLR",
+    "family": "Wave",
+    "model": "XLR",
+    "subcategory": "Streaming Audio Interface",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "inputs": 1,
+      "outputs": 1
+    },
+    "connections": [],
+    "compatibleWith": [
+      "Wave Link",
+      "OBS Studio"
+    ],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  },
+  {
+    "id": "tc-helicon-goxlr-mini",
+    "brand": "TC Helicon",
+    "name": "GoXLR Mini",
+    "equipmentType": "interfaces",
+    "category": "Broadcast Mixer",
+    "description": "Compact broadcast mixer and USB audio interface.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [
+      "GoXLR App",
+      "OBS Studio"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "inputs": 4,
+      "outputs": 4
+    },
+    "usbDetect": [
+      "GoXLR Mini"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "tc-helicon-goxlr-mini",
+    "manufacturer": "TC Helicon",
+    "displayName": "GoXLR Mini",
+    "family": "GoXLR",
+    "model": "Mini",
+    "subcategory": "Broadcast Mixer",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "inputs": 4,
+      "outputs": 4
+    },
+    "connections": [],
+    "compatibleWith": [
+      "GoXLR App",
+      "OBS Studio"
+    ],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  },
+  {
+    "id": "universal-audio-volt-2",
+    "brand": "Universal Audio",
+    "name": "Volt 2",
+    "equipmentType": "interfaces",
+    "category": "USB Audio Interface",
+    "description": "Two-input USB audio interface.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [
+      "OBS Studio",
+      "Ableton Live"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "inputs": 2,
+      "outputs": 2
+    },
+    "usbDetect": [
+      "Universal Audio Volt 2",
+      "Volt 2"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "universal-audio-volt-2",
+    "manufacturer": "Universal Audio",
+    "displayName": "Volt 2",
+    "family": "Volt",
+    "model": "2",
+    "subcategory": "USB Audio Interface",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "inputs": 2,
+      "outputs": 2
+    },
+    "connections": [],
+    "compatibleWith": [
+      "OBS Studio",
+      "Ableton Live"
+    ],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  }
+]

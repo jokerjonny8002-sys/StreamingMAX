@@ -1,0 +1,170 @@
+[
+  {
+    "id": "denon-prime-4-plus",
+    "brand": "Denon DJ",
+    "name": "Prime 4+",
+    "equipmentType": "controllers",
+    "category": "all-in-one",
+    "description": "Four-deck standalone DJ system.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [
+      "Engine DJ",
+      "Serato DJ Pro"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "channels": 4,
+      "decks": 4,
+      "display": "Touchscreen"
+    },
+    "usbDetect": [
+      "PRIME 4+",
+      "Denon DJ Prime 4+"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "denon-prime-4-plus",
+    "manufacturer": "Denon DJ",
+    "displayName": "Prime 4+",
+    "family": "Prime",
+    "model": "4+",
+    "subcategory": "all-in-one",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "channels": 4,
+      "decks": 4,
+      "display": "Touchscreen"
+    },
+    "connections": [],
+    "compatibleWith": [
+      "Engine DJ",
+      "Serato DJ Pro"
+    ],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  },
+  {
+    "id": "denon-sc-live-2",
+    "brand": "Denon DJ",
+    "name": "SC LIVE 2",
+    "equipmentType": "controllers",
+    "category": "all-in-one",
+    "description": "Two-deck standalone DJ system with built-in speakers.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [
+      "Engine DJ",
+      "Serato DJ Pro"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "channels": 2,
+      "decks": 2,
+      "display": "Touchscreen"
+    },
+    "usbDetect": [
+      "SC LIVE 2",
+      "Denon DJ SC LIVE 2"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "denon-sc-live-2",
+    "manufacturer": "Denon DJ",
+    "displayName": "SC LIVE 2",
+    "family": "SC LIVE",
+    "model": "2",
+    "subcategory": "all-in-one",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "channels": 2,
+      "decks": 2,
+      "display": "Touchscreen"
+    },
+    "connections": [],
+    "compatibleWith": [
+      "Engine DJ",
+      "Serato DJ Pro"
+    ],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  },
+  {
+    "id": "denon-sc-live-4",
+    "brand": "Denon DJ",
+    "name": "SC LIVE 4",
+    "equipmentType": "controllers",
+    "category": "all-in-one",
+    "description": "Four-deck standalone DJ system with built-in speakers.",
+    "heroImage": "",
+    "gallery": [],
+    "software": [
+      "Engine DJ",
+      "Serato DJ Pro"
+    ],
+    "firmware": {
+      "installed": "",
+      "latest": "",
+      "checkAutomatically": false
+    },
+    "specs": {
+      "channels": 4,
+      "decks": 4,
+      "display": "Touchscreen"
+    },
+    "usbDetect": [
+      "SC LIVE 4",
+      "Denon DJ SC LIVE 4"
+    ],
+    "manualUrl": "",
+    "driverUrl": "",
+    "knownIssues": [],
+    "recommendedSettings": {},
+    "legacyId": "denon-sc-live-4",
+    "manufacturer": "Denon DJ",
+    "displayName": "SC LIVE 4",
+    "family": "SC LIVE",
+    "model": "4",
+    "subcategory": "all-in-one",
+    "status": "Current",
+    "released": null,
+    "confidence": "curated",
+    "image": "",
+    "specifications": {
+      "channels": 4,
+      "decks": 4,
+      "display": "Touchscreen"
+    },
+    "connections": [],
+    "compatibleWith": [
+      "Engine DJ",
+      "Serato DJ Pro"
+    ],
+    "manual": "",
+    "driver": "",
+    "atlasNotes": "",
+    "streamFriendly": true
+  }
+]
